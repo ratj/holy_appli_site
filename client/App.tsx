@@ -17,6 +17,10 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  function handleWhatsAppDemo(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
+    event.preventDefault();
+    window.open("https://wa.me/33662110445?text=Bonjour%20Holy%20Appli%2C%20je%20souhaite%20découvrir%20la%20démonstration%20!", "_blank");
+  }
   return (
     <motion.nav
       className="bg-slate-900/95 backdrop-blur-xl shadow-2xl border-b border-green-400/20 sticky top-0 z-50"
@@ -49,10 +53,10 @@ function Navigation() {
           <div className="hidden md:flex items-center space-x-8">
             {[
               { to: "/", label: "Accueil" },
-              { to: "/about", label: "À propos" },
               { to: "/features", label: "Fonctionnalités" },
               { to: "/impact", label: "Impact" },
-              { to: "/contact", label: "Contact" }
+              { to: "/contact", label: "Contact" },
+              { to: "/about", label: "À propos" }
             ].map((item, index) => (
               <motion.div
                 key={item.to}
@@ -78,7 +82,7 @@ function Navigation() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button size="sm" className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold border-0 shadow-lg">
+              <Button size="sm" className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold border-0 shadow-lg" onClick={handleWhatsAppDemo}>
                 <MessageCircle className="mr-2 h-4 w-4" />
                 🚀 Demo
               </Button>
@@ -133,7 +137,7 @@ function Navigation() {
               </motion.div>
             ))}
             <div className="px-3 py-2">
-              <Button size="sm" className="bg-gradient-to-r from-green-500 to-emerald-600 text-white w-full font-bold">
+              <Button size="sm" className="bg-gradient-to-r from-green-500 to-emerald-600 text-white w-full font-bold" onClick={handleWhatsAppDemo} >
                 <MessageCircle className="mr-2 h-4 w-4" />
                 🚀 Démonstration
               </Button>
