@@ -12,6 +12,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import PlaceholderPage from "./pages/PlaceholderPage";
 import { FloatingWhatsApp } from "@/components/ui/floating-whatsapp";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -285,6 +286,7 @@ function Footer() {
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="min-h-screen flex flex-col">
         <Navigation />
         <main className="flex-grow">
