@@ -119,9 +119,9 @@ export default function Impact() {
             </h1>
             
             <p className="text-xl text-green-100 mb-8 max-w-4xl mx-auto leading-relaxed">
-              <span className="text-green-400 font-bold">+285% revenus moyens</span>, 
-              <span className="text-emerald-400 font-bold"> 50+ producteurs enrichis</span>, 
-              <span className="text-cyan-400 font-bold"> export Europe certifié</span>. 
+              <span className="text-green-400 font-bold">+revenus moyens</span>, 
+              <span className="text-emerald-400 font-bold"> +producteurs enrichis</span>, 
+              <span className="text-cyan-400 font-bold"> normes internationales</span>. 
               Découvrez les résultats concrets de nos partenaires agriculteurs.
             </p>
           </motion.div>
@@ -143,7 +143,7 @@ export default function Impact() {
             </h2>
             <p className="text-lg text-green-200">
               <span className="text-green-400 font-bold">Depuis 2023</span>, Holy Appli génère des 
-              <span className="text-emerald-400 font-bold"> impacts financiers concrets</span> pour nos partenaires
+              <span className="text-emerald-400 font-bold"> impacts concrets</span> pour nos partenaires
             </p>
           </motion.div>
 
@@ -176,7 +176,7 @@ export default function Impact() {
             ))}
           </motion.div>
 
-          {/* Economic Impact by Region */}
+          {/* Economic Impact by Region 
           <motion.div
             className="bg-slate-900/80 backdrop-blur-xl rounded-xl p-8 shadow-lg border border-white/10"
             initial={{ opacity: 0, y: 30 }}
@@ -221,11 +221,11 @@ export default function Impact() {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </motion.div>*/}
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials 
       <section className="py-16 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
@@ -236,10 +236,10 @@ export default function Impact() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold text-white mb-4">
-              Témoignages de nos <span className="text-green-400">Partenaires Enrichis</span>
+              Témoignages de nos <span className="text-green-400">Partenaires </span>
             </h2>
             <p className="text-lg text-green-200">
-              Écoutez ceux qui ont <span className="text-green-400 font-bold">multiplié leurs revenus</span> avec Holy Appli
+              Écoutez ceux qui ont <span className="text-green-400 font-bold">multiplié leurs productions</span> avec Holy Appli
             </p>
           </motion.div>
 
@@ -298,7 +298,7 @@ export default function Impact() {
             ))}
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Sustainability Metrics */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 relative">
@@ -365,12 +365,14 @@ export default function Impact() {
             <h2 className="text-3xl font-bold text-white mb-4">
               Expansion <span className="text-blue-400">Afrique</span> en Cours
             </h2>
+            {/* Africa Expansion 
             <p className="text-lg text-green-200">
               <span className="text-blue-400 font-bold">4 pays africains</span> adoptent déjà nos solutions avec 
               <span className="text-green-400 font-bold"> partenariats gouvernementaux</span>
-            </p>
+            </p>*/}
           </motion.div>
 
+          {/* Africa Opportunities 
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 gap-6"
             variants={staggerContainer}
@@ -418,7 +420,7 @@ export default function Impact() {
                 </Card>
               </motion.div>
             ))}
-          </motion.div>
+          </motion.div>*/}
         </div>
       </section>
 
@@ -437,18 +439,18 @@ export default function Impact() {
                 Formation & <span className="text-green-400">Accompagnement</span> Total
               </h2>
               <p className="text-lg text-green-200 mb-8">
-                <span className="text-green-400 font-bold">100% de nos partenaires</span> atteignent la 
-                <span className="text-emerald-400 font-bold"> rentabilité en 6 mois</span> grâce à notre 
+                <span className="text-green-400 font-bold">100% de nos partenaires</span> atteignent 
+                <span className="text-emerald-400 font-bold"> rapidement la rentabilité </span> grâce à notre 
                 <span className="text-cyan-400 font-bold"> accompagnement personnalisé</span>.
               </p>
               
               <div className="space-y-4">
                 {[
-                  "Formation 5 jours sur site + certification",
+                  "Formation personalisée",
                   "Support 24/7 français/malgache/anglais",
-                  "Mise à jour IA et nouvelles variétés",
-                  "Assistance certification bio européenne",
-                  "Réseau export Europe & contrats sécurisés"
+                  "Mise à jour et nouvelles variétés",
+                  "Assistance certification et bonnes pratiques",
+                  "Réseau de partenaire & contrats sécurisés"
                 ].map((feature, index) => (
                   <motion.div
                     key={index}
@@ -476,22 +478,22 @@ export default function Impact() {
                 <Award className="h-12 w-12 mx-auto mb-4" />
                 <h3 className="text-2xl font-bold mb-4">Programme Partenaire Elite</h3>
                 <p className="text-green-100 mb-6">
-                  Rejoignez nos <span className="font-bold">50+ producteurs partenaires</span> qui ont 
-                  <span className="font-bold"> multiplié leurs revenus par 2.5</span>
+                  Rejoignez nos <span className="font-bold"> producteurs partenaires</span> qui ont 
+                  <span className="font-bold"> multiplié leurs productions</span>
                 </p>
                 
                 <div className="space-y-3 text-left mb-6">
                   <div className="flex items-center">
                     <CheckCircle className="h-4 w-4 mr-2" />
-                    <span className="text-sm">Revenus garantis x2.5 minimum</span>
+                    <span className="text-sm">Augmentation de la production</span>
                   </div>
                   <div className="flex items-center">
                     <CheckCircle className="h-4 w-4 mr-2" />
-                    <span className="text-sm">Export Europe prix premium +85%</span>
+                    <span className="text-sm">Augmentation des revenus</span>
                   </div>
                   <div className="flex items-center">
                     <CheckCircle className="h-4 w-4 mr-2" />
-                    <span className="text-sm">Contrats export sécurisés 3 ans</span>
+                    <span className="text-sm">Impact social</span>
                   </div>
                   <div className="flex items-center">
                     <CheckCircle className="h-4 w-4 mr-2" />
@@ -520,18 +522,14 @@ export default function Impact() {
             <h2 className="text-3xl font-bold text-white mb-6">
               Rejoignez la <span className="text-green-400">Success Story</span> Holy Appli
             </h2>
-            <p className="text-xl text-green-100 mb-8">
-              <span className="text-green-400 font-bold">50 places disponibles</span> pour notre programme partenaire 2024. 
-              <span className="text-emerald-400 font-bold"> Revenus garantis x2.5</span> ou 
-              <span className="text-cyan-400 font-bold"> remboursement intégral</span>.
-            </p>
+           
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button onClick={handleWhatsAppDemo} size="lg" className="bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4">
                 <MessageCircle className="mr-2 h-5 w-5" />
                 🚀 Devenir partenaire elite
               </Button>
               <Button onClick={handlePartnerRedirect} size="lg" variant="outline" className="border-green-400 text-green-400 hover:bg-green-500/10 font-bold px-8 py-4">
-                📊 Télécharger étude complète
+                📊 Demander une étude complète
               </Button>
             </div>
           </motion.div>
