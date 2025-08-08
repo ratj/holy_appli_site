@@ -53,14 +53,14 @@ export default function Features() {
     },
     {
       id: "phenology",
-      title: "Suivi Phénologique BBCH",
+      title: "Suivi Phénologique",
       icon: Leaf,
       color: "bg-gradient-to-r from-green-500 to-emerald-500",
       description: "Automatisation du calendrier de développement des cultures",
       features: [
         "Reconnaissance automatique des stades BBCH",
         "Modèles IA spécialisés par culture",
-        "Prédictions basées sur données météo",
+        "Prédictions basées sur données fiables",
         "Alertes personnalisées par stade"
       ],
       capabilities: [
@@ -78,9 +78,9 @@ export default function Features() {
       description: "Gestion optimisée des pratiques biologiques et durables",
       features: [
         "Base de données biopesticides certifiés",
-        "Calculateur de compostage optimisé",
+        "Calcul optimisé",
         "Suivi rotation des cultures",
-        "Certification bio assistée"
+        "Certification"
       ],
       capabilities: [
         { name: "Compostage", desc: "ROI +180% vs chimique" },
@@ -300,7 +300,7 @@ export default function Features() {
               Application Mobile <span className="text-purple-400">Terrain</span>
             </h2>
             <p className="text-lg text-green-200 max-w-3xl mx-auto">
-              <span className="text-purple-400 font-bold">100% offline</span>, 
+              <span className="text-purple-400 font-bold">Fonctionnant offline</span>, 
               <span className="text-cyan-400 font-bold"> synchronisation automatique</span>, 
               interface optimisée pour le terrain malgache.
             </p>
@@ -350,8 +350,8 @@ export default function Features() {
             </h2>
             <p className="text-lg text-green-200 max-w-3xl mx-auto">
               <span className="text-orange-400 font-bold">Surveillance 24/7</span> de vos cultures avec 
-              <span className="text-cyan-400 font-bold"> transmission satellite</span> et 
-              <span className="text-green-400 font-bold"> autonomie 12 mois</span>.
+              <span className="text-cyan-400 font-bold"> transmission des données à temps réel</span> et 
+              <span className="text-green-400 font-bold"> autonomie 3 mois</span>.
             </p>
           </motion.div>
 
@@ -414,7 +414,7 @@ export default function Features() {
               </h2>
               
               <p className="text-lg text-green-200 mb-8">
-                <span className="text-indigo-400 font-bold">IA prédictive 99.8%</span> de précision pour 
+                <span className="text-indigo-400 font-bold">Prédiction 99.8%</span> de précision pour 
                 <span className="text-green-400 font-bold"> optimiser vos rendements</span> et 
                 <span className="text-cyan-400 font-bold"> maximiser vos profits</span>.
               </p>
@@ -486,9 +486,9 @@ export default function Features() {
               Prêt à <span className="text-green-400">Multiplier vos Revenus</span> ?
             </h2>
             <p className="text-xl text-green-100 mb-8">
-              Rejoignez nos <span className="text-green-400 font-bold">50+ producteurs partenaires</span> qui 
-              <span className="text-emerald-400 font-bold"> exportent vers l'Europe</span> avec 
-              <span className="text-cyan-400 font-bold"> prix premium +85%</span>.
+              Rejoignez nos <span className="text-green-400 font-bold">producteurs partenaires</span> qui 
+              <span className="text-emerald-400 font-bold"> produisent</span> en quantité et en qualité tout en  répondant aux 
+              <span className="text-cyan-400 font-bold"> normes internationales</span>.
             </p>
             <Button onClick={handleWhatsAppDemo} size="lg" className="bg-green-600 hover:bg-green-700 text-white px-8 py-4">
               <MessageCircle className="mr-2 h-5 w-5" />
