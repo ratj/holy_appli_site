@@ -127,9 +127,16 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             
-            <Badge className="mb-4 bg-gradient-to-r from-green-400 to-emerald-500 text-white text-lg px-6 py-2 border-0">
-              🏢 Développé par Ichtus IT
-            </Badge>
+            <a
+              href="https://www.ichtus-it.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none" }}
+            >
+              <Badge className="mb-4 bg-gradient-to-r from-green-400 to-emerald-500 text-white text-lg px-6 py-2 border-0 cursor-pointer hover:scale-105 transition-transform">
+                🏢 Développé par Ichtus IT
+              </Badge>
+            </a>
             
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-6">
               À propos de <span className="text-green-400">Holy Appli</span>
@@ -137,7 +144,7 @@ export default function About() {
             
             <p className="text-xl text-green-100 mb-8 max-w-4xl mx-auto leading-relaxed">
               Holy Appli est une <span className="text-green-400 font-bold">innovation révolutionnaire</span> développée par 
-              <span className="text-emerald-400 font-bold"> Ichtus IT</span>, agence française spécialisée dans les 
+              <span className="text-emerald-400 font-bold"> Ichtus IT</span>, agence digitale spécialisée dans les 
               <span className="text-cyan-400 font-bold"> applications web et mobile performantes</span>.
             </p>
           </motion.div>
@@ -165,7 +172,7 @@ export default function About() {
               </h2>
               
               <p className="text-lg text-green-200 mb-6">
-                Agence française basée à <span className="text-cyan-400 font-bold">Tourcoing</span>, 
+                Agence digitale basée à <span className="text-cyan-400 font-bold">Madagascar et en France</span>, 
                 spécialisée dans le développement d'applications web et mobile 
                 <span className="text-green-400 font-bold"> performantes, ergonomiques et intuitives</span>.
               </p>
@@ -408,7 +415,7 @@ export default function About() {
             </h2>
             <p className="text-xl text-green-100 mb-8 max-w-4xl mx-auto">
               Fruit de <span className="font-bold">18 mois de développement</span>, Holy Appli révolutionne l'agriculture malgache 
-              en combinant <span className="font-bold">IA, drones multispectraux, IoT et blockchain</span> dans une solution unique au monde.
+              en combinant <span className="font-bold">IA, drones multispectraux, IoT et blockchain</span> dans une solution révolutionnaire et adaptée aux besoins du marché.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -417,7 +424,7 @@ export default function About() {
                 <div className="text-sm opacity-90">Développement intensif</div>
               </div>
               <div className="bg-white/10 rounded-lg p-4">
-                <div className="text-2xl font-bold mb-2">6 modules IA</div>
+                <div className="text-2xl font-bold mb-2">6 modules</div>
                 <div className="text-sm opacity-90">Technologies avancées</div>
               </div>
               <div className="bg-white/10 rounded-lg p-4">
@@ -431,7 +438,7 @@ export default function About() {
                 <MessageCircle className="mr-2 h-5 w-5" />
                 Voir Holy Appli en action
               </Button>
-              <Button onClick={handleContactIchtus} size="lg" variant="outline" className="border-white text-white hover:bg-white/10 font-bold">
+              <Button onClick={handleContactIchtus} size="lg" variant="outline" className="border-white text-green-600 hover:bg-white/10 font-bold">
                 <Mail className="mr-2 h-5 w-5" />
                 Projet similaire avec Ichtus IT
               </Button>
