@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export default function About() {
   const handleWhatsAppDemo = () => {
-    const whatsappNumber = "+261341234567";
+    const whatsappNumber = "+33662110445";
     const message = "Bonjour ! Je viens de la page À propos de Holy Appli et suis impressionné par le travail d'Ichtus IT. Je souhaite discuter d'un projet similaire. Pouvez-vous me mettre en contact ?";
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;

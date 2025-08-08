@@ -12,7 +12,7 @@ export default function Index() {
   const navigate = useNavigate();
 
   const handleWhatsAppDemo = () => {
-    const whatsappNumber = "+261341234567";
+    const whatsappNumber = "+33662110445";
     const message = "Bonjour ! Je viens de visiter le site Holy Appli et souhaite une démonstration de vos technologies agricoles révolutionnaires. Pouvez-vous me présenter vos solutions d'agriculture biologique intelligente ?";
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;

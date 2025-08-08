@@ -11,7 +11,7 @@ export default function Impact() {
   const navigate = useNavigate();
 
   const handleWhatsAppDemo = () => {
-    const whatsappNumber = "+261341234567";
+    const whatsappNumber = "+33662110445";
     const message = "Bonjour ! Je viens de la page Impact de Holy Appli et suis impressionné par vos résultats. Je souhaite rejoindre vos producteurs partenaires. Pouvez-vous me présenter votre programme ?";
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
