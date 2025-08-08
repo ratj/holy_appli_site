@@ -98,7 +98,7 @@ export default function Contact() {
     {
       icon: Phone,
       title: "Téléphone",
-      details: ["+261 34 12 345 67", "Support 24/7 disponible"],
+      details: ["+261 32 07 088 81", "Support 24/7 disponible"],
       color: "text-blue-400"
     },
     {
@@ -200,7 +200,7 @@ export default function Contact() {
             </h1>
             
             <p className="text-xl text-green-100 mb-8 max-w-4xl mx-auto leading-relaxed">
-              <span className="text-green-400 font-bold">Réponse garantie en 2h</span>. 
+              <span className="text-green-400 font-bold">Réponse rapide garantie</span>. 
               Notre équipe d'experts agricoles est prête à 
               <span className="text-emerald-400 font-bold"> transformer votre exploitation</span> avec nos 
               <span className="text-cyan-400 font-bold"> technologies révolutionnaires</span>.
@@ -261,7 +261,7 @@ export default function Contact() {
                 <div className="space-y-3">
                   <Button onClick={handleWhatsAppDirect} className="bg-white text-green-600 hover:bg-green-50 w-full justify-start font-bold">
                     <MessageCircle className="mr-2 h-4 w-4" />
-                    WhatsApp: +261 34 12 345 67
+                    WhatsApp: +261 32 07 088 81
                   </Button>
                   <Button className="bg-white text-green-600 hover:bg-green-50 w-full justify-start font-bold">
                     <Calendar className="mr-2 h-4 w-4" />
@@ -530,11 +530,11 @@ export default function Contact() {
             {[
               {
                 q: "Quel investissement pour commencer ?",
-                a: "À partir de 2M Ar pour 10 hectares. ROI garanti 250% en 18 mois ou remboursement."
+                a: "Contactez-nous pour un devis personnalisé pour votre exploitation."
               },
               {
                 q: "Formation nécessaire ?",
-                a: "Formation complète 5 jours sur site incluse + certification. Support 24/7 ensuite."
+                a: "Formation complète. Support 24/7 ensuite."
               },
               {
                 q: "Fonctionne sans internet ?",
@@ -542,15 +542,15 @@ export default function Contact() {
               },
               {
                 q: "Support en malgache ?",
-                a: "Équipe trilingue français/malgache/anglais. Support technique 24/7 garanti."
+                a: "Équipe multilingue français/malgache/anglais/portugais. Support technique 24/7 garanti."
               },
               {
                 q: "Compatible toutes cultures ?",
-                a: "Litchi, vanille, girofle optimisés. Café, mangue en développement 2024."
+                a: "Oui."
               },
               {
                 q: "Délai pour résultats ?",
-                a: "Premiers résultats en 3 mois. Revenus doublés garantis en 18 mois maximum."
+                a: "Premiers résultats visible en 3 mois."
               }
             ].map((faq, index) => (
               <motion.div
