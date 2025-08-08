@@ -146,6 +146,14 @@ function Navigation() {
 }
 
 function Footer() {
+  function handleWhatsAppDemo(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
+    event.preventDefault();
+    window.open("https://wa.me/33662110445?text=Bonjour%20Holy%20Appli%2C%20je%20souhaite%20découvrir%20la%20démonstration%20!", "_blank");
+  }
+  function handleWhatsAppPartenaire(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
+    event.preventDefault();
+    window.open("https://wa.me/33662110445?text=Bonjour%20Holy%20Appli%2C%20je%20souhaite%20devenir%20partenaire%20!", "_blank");
+  }
   return (
     <footer className="bg-slate-900 text-white relative overflow-hidden">
       {/* Animated background */}
@@ -192,13 +200,13 @@ function Footer() {
             </p>
             <div className="flex space-x-4">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="sm" className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 font-bold">
+                <Button size="sm" className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 font-bold" onClick={handleWhatsAppDemo} >
                   <MessageCircle className="mr-2 h-4 w-4" />
                   🚀 Demo
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="sm" variant="outline" className="border-green-400 text-green-400 hover:bg-green-400/10 font-bold">
+                <Button size="sm" variant="outline" className="border-green-400 text-green-400 hover:bg-green-400/10 font-bold" onClick={handleWhatsAppPartenaire}>
                   <Mail className="mr-2 h-4 w-4" />
                   Partenaire
                 </Button>
@@ -260,23 +268,31 @@ function Footer() {
         </div>
 
         <motion.div
-          className="border-t border-green-400/20 mt-12 pt-8 text-center"
+          className="border-t border-green-400/20 mt-12 pt-8 text-center cursor-pointer"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <p className="text-green-200">
-            &copy; 2024 <span className="text-green-400 font-bold">Holy Appli</span> -
-            Révolution Bio-Technologique. Tous droits réservés.
-          </p>
-          <motion.p
-            className="text-sm text-green-300 mt-2"
-            animate={{ opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 2, repeat: Infinity }}
+          <a
+            href="https://www.ichtus-it.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block"
+            style={{ textDecoration: "none" }}
           >
-            🌱 Powered by Quantum Agriculture AI 🚀
-          </motion.p>
+            <p className="text-green-200">
+              &copy; 2024 <span className="text-green-400 font-bold">Holy Appli</span> -
+              Révolution Agri-Tech. Tous droits réservés.
+            </p>
+            <motion.p
+              className="text-sm text-green-300 mt-2"
+              animate={{ opacity: [0.5, 1, 0.5] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              🌱 Powered by Ichtus IT 🚀
+            </motion.p>
+          </a>
         </motion.div>
       </div>
     </footer>

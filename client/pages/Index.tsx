@@ -50,7 +50,7 @@ export default function Index() {
       icon: Leaf,
       title: "🌱 Intrants 100% Biologiques",
       description: "Solutions biologiques certifiées pour agriculture durable",
-      details: ["Compost enrichi mycorhizes", "Biopesticides naturels ciblés", "Biostimulants organiques", "Certification AB/Ecocert"],
+      details: ["Compost enrichi", "Biopesticides naturels ciblés", "Biostimulants organiques", "Certification"],
       color: "bg-gradient-to-r from-green-500 to-emerald-500",
       techLevel: "CERTIFIÉ"
     },
@@ -58,7 +58,7 @@ export default function Index() {
       icon: TreePine,
       title: "🌿 Écosystème Bio-Tech",
       description: "Technologie au service de l'agriculture biologique",
-      details: ["Formulations biologiques IA", "Microbiome du sol analysé", "Zéro résidu chimique", "Biodiversité préservée"],
+      details: ["Formulations biologiques", "Analyse du sol", "Zéro résidu chimique", "Biodiversité préservée"],
       color: "bg-gradient-to-r from-emerald-500 to-green-600",
       techLevel: "INNOVATION"
     },
@@ -72,9 +72,9 @@ export default function Index() {
     },
     {
       icon: Satellite,
-      title: "📡 IoT Spatial Connecté",
-      description: "Réseau de capteurs connectés par satellite",
-      details: ["Capteurs nano-technologie", "Transmission satellite LoRa", "Edge computing embarqué", "Blockchain traçabilité"],
+      title: "📡 IoT Connecté",
+      description: "Réseau de capteurs connectés",
+      details: ["Capteurs multispectraux", "Transmission à temps réel", "Edge computing embarqué", "Blockchain traçabilité"],
       color: "bg-gradient-to-r from-orange-500 to-red-500",
       techLevel: "SPATIAL"
     },
@@ -160,8 +160,7 @@ export default function Index() {
               <span className="text-emerald-400 font-semibold"> -65% de pesticides chimiques</span>,
               <span className="text-cyan-400 font-semibold"> 100% traçabilité bio</span>.
               Holy Appli révolutionne l'agriculture malgache avec ses <span className="text-green-300 font-semibold">drones multispectraux IA</span>,
-              ses <span className="text-blue-300 font-semibold">capteurs IoT connectés</span> et ses
-              <span className="text-purple-300 font-semibold">intrants biologiques certifiés</span>.
+              ses <span className="text-blue-300 font-semibold">capteurs IoT connectés</span>.
             </motion.p>
             
             <motion.div 
@@ -177,7 +176,7 @@ export default function Index() {
                   className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-10 py-6 text-xl font-bold shadow-2xl border-0"
                 >
                   <MessageCircle className="mr-3 h-6 w-6" />
-                  💬 DÉMO QUANTIQUE
+                  💬 DEMANDER UN DÉMO
                 </Button>
               </motion.div>
 
@@ -189,7 +188,7 @@ export default function Index() {
                   className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 px-10 py-6 text-xl font-bold shadow-2xl backdrop-blur-sm"
                 >
                   <Mail className="mr-3 h-6 w-6" />
-                  🚀 PARTENAIRE BIO-TECH
+                  🚀 PARTENAIRE AGRI-TECH
                 </Button>
               </motion.div>
             </motion.div>
@@ -202,10 +201,10 @@ export default function Index() {
               transition={{ delay: 1, duration: 0.8 }}
             >
               {[
-                { metric: "99.7%", label: "Précision IA", icon: Brain },
+                { metric: "99.7%", label: "Précision", icon: Brain },
                 { metric: "0%", label: "Résidus Chimiques", icon: Leaf },
                 { metric: "50+", label: "Drones Actifs", icon: Plane },
-                { metric: "24/7", label: "Monitoring Bio", icon: Satellite }
+                { metric: "24/7", label: "Monitoring et traçabilité", icon: Satellite }
               ].map((stat, index) => (
                 <motion.div
                   key={index}
@@ -237,7 +236,7 @@ export default function Index() {
           >
             <div className="inline-flex items-center bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-xl rounded-full px-8 py-4 mb-8 border border-green-400/30">
               <Leaf className="h-8 w-8 text-green-400 mr-4" />
-              <span className="text-2xl font-bold text-white">100% AGRICULTURE BIOLOGIQUE CERTIFIÉE</span>
+              <span className="text-2xl font-bold text-white">100% AGRICULTURE BIOLOGIQUE</span>
             </div>
             
             <h2 className="text-4xl lg:text-5xl font-black text-white mb-6">
@@ -246,9 +245,9 @@ export default function Index() {
 
             <p className="text-xl text-green-100 max-w-4xl mx-auto">
               <span className="text-green-400 font-bold">500+ hectares surveillés</span>,
-              <span className="text-emerald-400 font-bold">50+ producteurs autonomisés</span>,
-              <span className="text-cyan-400 font-bold">75% d'économies sur les intrants</span>.
-              Nos technologies d'IA et intrants biologiques révolutionnent l'agriculture malgache
+              <span className="text-emerald-400 font-bold"> 50+ producteurs autonomisés</span>,
+              <span className="text-cyan-400 font-bold"> 75% d'économies sur les intrants</span>.
+              Nos technologies avec l'IA révolutionnent l'agriculture malgache
               avec des résultats mesurables et durables.
             </p>
           </motion.div>
@@ -263,8 +262,8 @@ export default function Index() {
           >
             {[
               {
-                title: "🧬 Bio-Compost IA",
-                description: "+35% de rendement avec notre compost enrichi par intelligence artificielle",
+                title: "🧬 Bio-Compost",
+                description: "+35% de rendement avec notre compost enrichi",
                 benefits: ["+40% croissance racinaire", "pH optimal automatique", "Résistance aux maladies", "Certification AB garantie"],
                 color: "from-emerald-500 to-green-600"
               },
@@ -275,8 +274,8 @@ export default function Index() {
                 color: "from-green-500 to-emerald-600"
               },
               {
-                title: "⚡ Biostimulants Quantiques",
-                description: "+50% résistance au stress avec nos extraits nano-technologiques",
+                title: "⚡ Biostimulants",
+                description: "+50% résistance au stress",
                 benefits: ["+25% résistance sécheresse", "Floraison synchronisée", "Fruits 30% plus gros", "Export qualité premium"],
                 color: "from-cyan-500 to-green-500"
               }
@@ -311,7 +310,7 @@ export default function Index() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            {["AB Agriculture Biologique", "Ecocert Certifié", "OMRI Listed", "JAS Organic"].map((cert, index) => (
+            {["AB Agriculture Biologique", "Ecocert Certifié"].map((cert, index) => (
               <div
                 key={index}
                 className="bg-white/10 backdrop-blur-xl rounded-full px-6 py-3 border border-green-400/30"
@@ -380,17 +379,17 @@ export default function Index() {
               >
                 <div className="inline-flex items-center bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-xl rounded-full px-6 py-3 mb-6 border border-blue-400/30">
                   <Plane className="h-6 w-6 text-blue-400 mr-3" />
-                  <span className="text-blue-300 font-bold">FLOTTE DRONE QUANTIQUE</span>
+                  <span className="text-blue-300 font-bold">FLOTTE DRONE PROFESSIONNELLE</span>
                 </div>
                 
                 <h2 className="text-4xl font-black text-white mb-6">
-                  Surveillance <span className="text-cyan-400">99.8% Précise</span> par Drones IA
+                  Surveillance <span className="text-cyan-400">99.8% Précise</span> par Drones avec IA intégrée
                 </h2>
 
                 <p className="text-xl text-blue-100 mb-8">
                   <span className="text-cyan-400 font-bold">Détection précoce 15 jours avant</span> les symptômes visibles.
-                  <span className="text-blue-300 font-bold">Cartographie temps réel</span> de 200 hectares/jour.
-                  <span className="text-green-300 font-bold">Économies 60%</span> sur inspections manuelles.
+                  <span className="text-blue-300 font-bold"> Cartographie temps réel</span> de 200 hectares/jour.
+                  <span className="text-green-300 font-bold"> Économies 60%</span> sur inspections manuelles.
                 </p>
               </motion.div>
 
@@ -399,7 +398,7 @@ export default function Index() {
                   { icon: Brain, title: "IA Embarquée", desc: "Processeur neuronal Edge-AI" },
                   { icon: Camera, title: "Vision 8K", desc: "Capteurs multispectraux haute résolution" },
                   { icon: Satellite, title: "GPS-RTK", desc: "Précision centimétrique garantie" },
-                  { icon: Zap, title: "Vol Autonome", desc: "20km de portée, 45min d'autonomie" }
+                  { icon: Zap, title: "Vol Autonome", desc: "Plus de 20km de portée, plus de 45min d'autonomie" }
                 ].map((spec, index) => (
                   <motion.div
                     key={index}
@@ -533,7 +532,7 @@ export default function Index() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            Multipliez vos <span className="text-green-400">Revenus par 2.5</span>
+            Multipliez vos <span className="text-green-400">Revenus</span>
           </motion.h2>
 
           <motion.p
@@ -544,9 +543,9 @@ export default function Index() {
             viewport={{ once: true }}
           >
             <span className="text-green-400 font-bold">Nos producteurs partenaires</span> exportent désormais
-            vers l'Europe avec certification bio. <span className="text-emerald-400 font-bold">Prix premium +85%</span>,
-            <span className="text-cyan-400 font-bold">traçabilité blockchain</span>,
-            <span className="text-blue-300 font-bold">contrats sécurisés</span>.
+            vers l'Europe avec certification bio. <span className="text-emerald-400 font-bold">Prix premium</span>,
+            <span className="text-cyan-400 font-bold"> traçabilité blockchain</span>,
+            <span className="text-blue-300 font-bold"> données sécurisées</span>.
           </motion.p>
 
           <motion.div
