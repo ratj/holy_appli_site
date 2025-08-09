@@ -6,13 +6,15 @@ import { Plane, Leaf, MapPin, Smartphone, BarChart3, Shield, MessageCircle, Mail
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Index() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   const handleWhatsAppDemo = () => {
-    const whatsappNumber = "+33662110445";
+    const whatsappNumber = "+261341234567";
     const message = "Bonjour ! Je viens de visiter le site Holy Appli et souhaite une démonstration de vos technologies agricoles révolutionnaires. Pouvez-vous me présenter vos solutions d'agriculture biologique intelligente ?";
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
@@ -40,51 +42,51 @@ export default function Index() {
   const features = [
     {
       icon: Plane,
-      title: "🚁 Surveillance par Drone IA",
-      description: "Drones multispectraux avec intelligence artificielle embarquée",
-      details: ["Captures automatiques 4K/8K", "IA de détection précoce", "NDVI/NDRE temps réel", "Vol autonome précis GPS-RTK"],
+      title: t("home.feature1.title"),
+      description: t("home.feature1.desc"),
+      details: [t("home.feature1.detail1"), t("home.feature1.detail2"), t("home.feature1.detail3"), t("home.feature1.detail4")],
       color: "bg-gradient-to-r from-blue-500 to-cyan-500",
-      techLevel: "POINTE"
+      techLevel: t("home.feature1.level")
     },
     {
       icon: Leaf,
-      title: "🌱 Intrants 100% Biologiques",
-      description: "Solutions biologiques certifiées pour agriculture durable",
-      details: ["Compost enrichi", "Biopesticides naturels ciblés", "Biostimulants organiques", "Certification"],
+      title: t("home.feature2.title"),
+      description: t("home.feature2.desc"),
+      details: [t("home.feature2.detail1"), t("home.feature2.detail2"), t("home.feature2.detail3"), t("home.feature2.detail4")],
       color: "bg-gradient-to-r from-green-500 to-emerald-500",
-      techLevel: "CERTIFIÉ"
+      techLevel: t("home.feature2.level")
     },
     {
       icon: TreePine,
-      title: "🌿 Écosystème Bio-Tech",
-      description: "Technologie au service de l'agriculture biologique",
-      details: ["Formulations biologiques", "Analyse du sol", "Zéro résidu chimique", "Biodiversité préservée"],
+      title: t("home.feature3.title"),
+      description: t("home.feature3.desc"),
+      details: [t("home.feature3.detail1"), t("home.feature3.detail2"), t("home.feature3.detail3"), t("home.feature3.detail4")],
       color: "bg-gradient-to-r from-emerald-500 to-green-600",
-      techLevel: "INNOVATION"
+      techLevel: t("home.feature3.level")
     },
     {
       icon: Brain,
-      title: "🧠 Intelligence Artificielle",
-      description: "IA avancée pour optimisation biologique",
-      details: ["Machine Learning adaptatif", "Prédictions météo hyperlocales", "Algorithmes bio-optimisés", "Deep Learning phénologique"],
+      title: t("home.feature4.title"),
+      description: t("home.feature4.desc"),
+      details: [t("home.feature4.detail1"), t("home.feature4.detail2"), t("home.feature4.detail3"), t("home.feature4.detail4")],
       color: "bg-gradient-to-r from-purple-500 to-pink-500",
-      techLevel: "IA AVANCÉE"
+      techLevel: t("home.feature4.level")
     },
     {
       icon: Satellite,
-      title: "📡 IoT Connecté",
-      description: "Réseau de capteurs connectés",
-      details: ["Capteurs multispectraux", "Transmission à temps réel", "Edge computing embarqué", "Blockchain traçabilité"],
+      title: t("home.feature5.title"),
+      description: t("home.feature5.desc"),
+      details: [t("home.feature5.detail1"), t("home.feature5.detail2"), t("home.feature5.detail3"), t("home.feature5.detail4")],
       color: "bg-gradient-to-r from-orange-500 to-red-500",
-      techLevel: "SPATIAL"
+      techLevel: t("home.feature5.level")
     },
     {
       icon: Database,
-      title: "📊 Big Data Agricole",
-      description: "Analyse massive de données bio-agricoles",
-      details: ["Millions de points de données", "Prédictions quantiques", "Analytics temps réel", "Jumeaux numériques 3D"],
+      title: t("home.feature6.title"),
+      description: t("home.feature6.desc"),
+      details: [t("home.feature6.detail1"), t("home.feature6.detail2"), t("home.feature6.detail3"), t("home.feature6.detail4")],
       color: "bg-gradient-to-r from-indigo-500 to-purple-600",
-      techLevel: "QUANTUM"
+      techLevel: t("home.feature6.level")
     }
   ];
 
@@ -131,22 +133,22 @@ export default function Index() {
               transition={{ delay: 0.2, duration: 0.6 }}
             >
               <Badge className="mb-4 bg-gradient-to-r from-green-400 to-emerald-500 text-white text-lg px-8 py-3 shadow-2xl border-0">
-                🌱 Agriculture Bio-Technologique Révolutionnaire
+                {t("home.hero.badge")}
               </Badge>
             </motion.div>
             
-            <motion.h1 
+            <motion.h1
               className="text-5xl sm:text-7xl lg:text-8xl font-black mb-8 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
               <span className="bg-gradient-to-r from-green-400 via-emerald-500 to-cyan-500 bg-clip-text text-transparent">
-                HOLY APPLI
+                {t("home.hero.title1")}
               </span>
               <br />
               <span className="text-white">
-                BIO-INTELLIGENCE
+                {t("home.hero.title2")}
               </span>
             </motion.h1>
             
@@ -156,11 +158,7 @@ export default function Index() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              <span className="text-green-400 font-semibold">+40% de rendements</span>,
-              <span className="text-emerald-400 font-semibold"> -65% de pesticides chimiques</span>,
-              <span className="text-cyan-400 font-semibold"> 100% traçabilité bio</span>.
-              Holy Appli révolutionne l'agriculture malgache avec ses <span className="text-green-300 font-semibold">drones multispectraux IA</span>,
-              ses <span className="text-blue-300 font-semibold">capteurs IoT connectés</span>.
+              {t("home.hero.subtitle")}
             </motion.p>
             
             <motion.div 
@@ -176,7 +174,7 @@ export default function Index() {
                   className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-10 py-6 text-xl font-bold shadow-2xl border-0"
                 >
                   <MessageCircle className="mr-3 h-6 w-6" />
-                  💬 DEMANDER UN DÉMO
+                  {t("home.hero.cta1")}
                 </Button>
               </motion.div>
 
@@ -188,7 +186,7 @@ export default function Index() {
                   className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 px-10 py-6 text-xl font-bold shadow-2xl backdrop-blur-sm"
                 >
                   <Mail className="mr-3 h-6 w-6" />
-                  🚀 PARTENAIRE AGRI-TECH
+                  {t("home.hero.cta2")}
                 </Button>
               </motion.div>
             </motion.div>
@@ -201,10 +199,10 @@ export default function Index() {
               transition={{ delay: 1, duration: 0.8 }}
             >
               {[
-                { metric: "99.7%", label: "Précision", icon: Brain },
-                { metric: "0%", label: "Résidus Chimiques", icon: Leaf },
-                { metric: "50+", label: "Drones Actifs", icon: Plane },
-                { metric: "24/7", label: "Monitoring et traçabilité", icon: Satellite }
+                { metric: "99.7%", label: t("home.demo.stats.ai.precision"), icon: Brain },
+                { metric: "0%", label: t("home.demo.stats.chemical.residues"), icon: Leaf },
+                { metric: "50+", label: t("home.demo.stats.active.drones"), icon: Plane },
+                { metric: "24/7", label: t("home.demo.stats.bio.monitoring"), icon: Satellite }
               ].map((stat, index) => (
                 <motion.div
                   key={index}
@@ -236,19 +234,15 @@ export default function Index() {
           >
             <div className="inline-flex items-center bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-xl rounded-full px-8 py-4 mb-8 border border-green-400/30">
               <Leaf className="h-8 w-8 text-green-400 mr-4" />
-              <span className="text-2xl font-bold text-white">100% AGRICULTURE BIOLOGIQUE</span>
+              <span className="text-2xl font-bold text-white">{t("home.bio.section.badge")}</span>
             </div>
-            
+
             <h2 className="text-4xl lg:text-5xl font-black text-white mb-6">
-              Technologies qui <span className="text-green-400">Transforment Madagascar</span>
+              {t("home.bio.section.title")}
             </h2>
 
             <p className="text-xl text-green-100 max-w-4xl mx-auto">
-              <span className="text-green-400 font-bold">500+ hectares surveillés</span>,
-              <span className="text-emerald-400 font-bold"> 50+ producteurs autonomisés</span>,
-              <span className="text-cyan-400 font-bold"> 75% d'économies sur les intrants</span>.
-              Nos technologies avec l'IA révolutionnent l'agriculture malgache
-              avec des résultats mesurables et durables.
+              {t("home.bio.section.subtitle")}
             </p>
           </motion.div>
 
@@ -262,21 +256,21 @@ export default function Index() {
           >
             {[
               {
-                title: "🧬 Bio-Compost",
-                description: "+35% de rendement avec notre compost enrichi",
-                benefits: ["+40% croissance racinaire", "pH optimal automatique", "Résistance aux maladies", "Certification AB garantie"],
+                title: t("home.bio.product1.title"),
+                description: t("home.bio.product1.desc"),
+                benefits: [t("home.bio.product1.benefit1"), t("home.bio.product1.benefit2"), t("home.bio.product1.benefit3"), t("home.bio.product1.benefit4")],
                 color: "from-emerald-500 to-green-600"
               },
               {
-                title: "🦠 Biopesticides Ciblés",
-                description: "-80% de pesticides chimiques grâce à nos micro-organismes sélectionnés",
-                benefits: ["100% biodégradable", "Efficacité 95% vs ravageurs", "Zéro résistance développée", "Safe pour pollinisateurs"],
+                title: t("home.bio.product2.title"),
+                description: t("home.bio.product2.desc"),
+                benefits: [t("home.bio.product2.benefit1"), t("home.bio.product2.benefit2"), t("home.bio.product2.benefit3"), t("home.bio.product2.benefit4")],
                 color: "from-green-500 to-emerald-600"
               },
               {
-                title: "⚡ Biostimulants",
-                description: "+50% résistance au stress",
-                benefits: ["+25% résistance sécheresse", "Floraison synchronisée", "Fruits 30% plus gros", "Export qualité premium"],
+                title: t("home.bio.product3.title"),
+                description: t("home.bio.product3.desc"),
+                benefits: [t("home.bio.product3.benefit1"), t("home.bio.product3.benefit2"), t("home.bio.product3.benefit3"), t("home.bio.product3.benefit4")],
                 color: "from-cyan-500 to-green-500"
               }
             ].map((product, index) => (
@@ -310,7 +304,7 @@ export default function Index() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            {["AB Agriculture Biologique", "Ecocert Certifié"].map((cert, index) => (
+            {[t("home.bio.cert1"), t("home.bio.cert2")].map((cert, index) => (
               <div
                 key={index}
                 className="bg-white/10 backdrop-blur-xl rounded-full px-6 py-3 border border-green-400/30"
@@ -338,15 +332,15 @@ export default function Index() {
                 className="relative group"
                 whileHover={{ scale: 1.02 }}
               >
-                <img 
-                  src="https://images.pexels.com/photos/2164417/pexels-photo-2164417.jpeg" 
-                  alt="Drone agricole Holy Appli survolant les plantations"
+                <img
+                  src="https://images.pexels.com/photos/2164417/pexels-photo-2164417.jpeg"
+                  alt={t("home.drone.alt")}
                   className="w-full h-80 object-cover rounded-2xl border border-cyan-400/30 shadow-2xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent rounded-2xl flex items-end p-6">
                   <div className="text-white">
-                    <h3 className="text-xl font-bold mb-2">🚁 Drone DJI Mavic 3 Multispectral</h3>
-                    <p className="text-cyan-200 text-sm">Surveillance autonome avec IA embarquée</p>
+                    <h3 className="text-xl font-bold mb-2">{t("home.drone.title")}</h3>
+                    <p className="text-cyan-200 text-sm">{t("home.drone.subtitle")}</p>
                   </div>
                 </div>
               </motion.div>
@@ -355,15 +349,15 @@ export default function Index() {
                 className="relative group"
                 whileHover={{ scale: 1.02 }}
               >
-                <img 
-                  src="https://images.pexels.com/photos/33326118/pexels-photo-33326118.jpeg" 
-                  alt="Vue aérienne des plantations analysées par Holy Appli"
+                <img
+                  src="https://images.pexels.com/photos/33326118/pexels-photo-33326118.jpeg"
+                  alt={t("home.drone.analysis.alt")}
                   className="w-full h-64 object-cover rounded-2xl border border-green-400/30 shadow-2xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent rounded-2xl flex items-end p-6">
                   <div className="text-white">
-                    <h3 className="text-lg font-bold mb-2">📊 Analyse NDVI Temps Réel</h3>
-                    <p className="text-green-200 text-sm">Cartographie de la vigueur végétale</p>
+                    <h3 className="text-lg font-bold mb-2">{t("home.drone.analysis.title")}</h3>
+                    <p className="text-green-200 text-sm">{t("home.drone.analysis.desc")}</p>
                   </div>
                 </div>
               </motion.div>
@@ -379,26 +373,24 @@ export default function Index() {
               >
                 <div className="inline-flex items-center bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-xl rounded-full px-6 py-3 mb-6 border border-blue-400/30">
                   <Plane className="h-6 w-6 text-blue-400 mr-3" />
-                  <span className="text-blue-300 font-bold">FLOTTE DRONE PROFESSIONNELLE</span>
+                  <span className="text-blue-300 font-bold">{t("home.drone.section.badge")}</span>
                 </div>
-                
+
                 <h2 className="text-4xl font-black text-white mb-6">
-                  Surveillance <span className="text-cyan-400">99.8% Précise</span> par Drones avec IA intégrée
+                  {t("home.drone.section.title")}
                 </h2>
 
                 <p className="text-xl text-blue-100 mb-8">
-                  <span className="text-cyan-400 font-bold">Détection précoce 15 jours avant</span> les symptômes visibles.
-                  <span className="text-blue-300 font-bold"> Cartographie temps réel</span> de 200 hectares/jour.
-                  <span className="text-green-300 font-bold"> Économies 60%</span> sur inspections manuelles.
+                  {t("home.drone.section.subtitle")}
                 </p>
               </motion.div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  { icon: Brain, title: "IA Embarquée", desc: "Processeur neuronal Edge-AI" },
-                  { icon: Camera, title: "Vision 8K", desc: "Capteurs multispectraux haute résolution" },
-                  { icon: Satellite, title: "GPS-RTK", desc: "Précision centimétrique garantie" },
-                  { icon: Zap, title: "Vol Autonome", desc: "Plus de 20km de portée, plus de 45min d'autonomie" }
+                  { icon: Brain, title: t("home.drone.spec1.title"), desc: t("home.drone.spec1.desc") },
+                  { icon: Camera, title: t("home.drone.spec2.title"), desc: t("home.drone.spec2.desc") },
+                  { icon: Satellite, title: t("home.drone.spec3.title"), desc: t("home.drone.spec3.desc") },
+                  { icon: Zap, title: t("home.drone.spec4.title"), desc: t("home.drone.spec4.desc") }
                 ].map((spec, index) => (
                   <motion.div
                     key={index}
@@ -427,11 +419,10 @@ export default function Index() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl lg:text-5xl font-black text-white mb-6">
-              6 Technologies = <span className="text-green-400">Résultats Garantis</span>
+              {t("home.features.section.title")}
             </h2>
             <p className="text-xl text-green-100 max-w-4xl mx-auto">
-              <span className="text-green-400 font-bold">ROI 250%</span> en moyenne sur nos exploitations partenaires.
-              Chaque module Holy Appli génère des impacts mesurables et vérifiés sur le terrain.
+              {t("home.features.section.subtitle")}
             </p>
           </motion.div>
 
@@ -496,10 +487,10 @@ export default function Index() {
               viewport={{ once: true }}
             >
               {[
-                { number: "2.5M+", label: "Points de données/jour", color: "text-green-400", icon: Database },
-                { number: "99.8%", label: "Précision bio-détection", color: "text-blue-400", icon: Brain },
-                { number: "100%", label: "Agriculture biologique", color: "text-emerald-400", icon: Leaf },
-                { number: "75%", label: "Réduction coûts intrants", color: "text-cyan-400", icon: TrendingUp }
+                { number: "2.5M+", label: t("home.big.stats.data.points"), color: "text-green-400", icon: Database },
+                { number: "99.8%", label: t("home.big.stats.bio.detection"), color: "text-blue-400", icon: Brain },
+                { number: "100%", label: t("home.big.stats.organic.agriculture"), color: "text-emerald-400", icon: Leaf },
+                { number: "75%", label: t("home.big.stats.cost.reduction"), color: "text-cyan-400", icon: TrendingUp }
               ].map((stat, index) => (
                 <motion.div
                   key={index}
@@ -532,7 +523,7 @@ export default function Index() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            Multipliez vos <span className="text-green-400">Revenus</span>
+            {t("home.final.cta.title")}
           </motion.h2>
 
           <motion.p
@@ -542,10 +533,7 @@ export default function Index() {
             transition={{ delay: 0.2, duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <span className="text-green-400 font-bold">Nos producteurs partenaires</span> exportent désormais
-            vers l'Europe avec certification bio. <span className="text-emerald-400 font-bold">Prix premium</span>,
-            <span className="text-cyan-400 font-bold"> traçabilité blockchain</span>,
-            <span className="text-blue-300 font-bold"> données sécurisées</span>.
+            {t("home.final.cta.subtitle")}
           </motion.p>
 
           <motion.div
@@ -562,7 +550,7 @@ export default function Index() {
                 className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-12 py-6 text-xl font-bold shadow-2xl border-0"
               >
                 <MessageCircle className="mr-3 h-6 w-6" />
-                🚀 DÉMARRER MAINTENANT
+                {t("home.final.cta.button1")}
               </Button>
             </motion.div>
 
@@ -574,7 +562,7 @@ export default function Index() {
                 className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 px-12 py-6 text-xl font-bold shadow-2xl backdrop-blur-sm"
               >
                 <Mail className="mr-3 h-6 w-6" />
-                📊 VOIR ÉTUDES IMPACT
+                {t("home.final.cta.button2")}
               </Button>
             </motion.div>
           </motion.div>

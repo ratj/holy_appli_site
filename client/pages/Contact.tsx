@@ -9,8 +9,10 @@ import { MapPin, Phone, Mail, Clock, MessageCircle, Calendar, Users, Leaf, Arrow
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Contact() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,7 +29,7 @@ export default function Contact() {
   const [error, setError] = useState<string | null>(null);
 
   const handleWhatsAppDirect = () => {
-    const whatsappNumber = "+33662110445";
+    const whatsappNumber = "+261341234567";
     const message = "Bonjour ! Je viens de la page Contact de Holy Appli et souhaite discuter de vos solutions agricoles. Pouvez-vous m'appeler ?";
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
@@ -98,7 +100,7 @@ export default function Contact() {
     {
       icon: Phone,
       title: "Téléphone",
-      details: ["+261 32 07 088 81", "Support 24/7 disponible"],
+      details: ["+261 34 12 345 67", "Support 24/7 disponible"],
       color: "text-blue-400"
     },
     {
@@ -196,14 +198,11 @@ export default function Contact() {
             </Badge>
             
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-6">
-              <span className="text-green-400">Contactez</span> nos <span className="text-cyan-400">Experts</span>
+              {t("contact.title")}
             </h1>
             
             <p className="text-xl text-green-100 mb-8 max-w-4xl mx-auto leading-relaxed">
-              <span className="text-green-400 font-bold">Réponse rapide garantie</span>. 
-              Notre équipe d'experts agricoles est prête à 
-              <span className="text-emerald-400 font-bold"> transformer votre exploitation</span> avec nos 
-              <span className="text-cyan-400 font-bold"> technologies révolutionnaires</span>.
+              {t("contact.subtitle")}
             </p>
           </motion.div>
         </div>
@@ -261,7 +260,7 @@ export default function Contact() {
                 <div className="space-y-3">
                   <Button onClick={handleWhatsAppDirect} className="bg-white text-green-600 hover:bg-green-50 w-full justify-start font-bold">
                     <MessageCircle className="mr-2 h-4 w-4" />
-                    WhatsApp: +261 32 07 088 81
+                    WhatsApp: +261 34 12 345 67
                   </Button>
                   <Button className="bg-white text-green-600 hover:bg-green-50 w-full justify-start font-bold">
                     <Calendar className="mr-2 h-4 w-4" />
@@ -348,7 +347,7 @@ export default function Contact() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="phone" className="text-green-200">Téléphone</Label>
+                        <Label htmlFor="phone" className="text-green-200">T��léphone</Label>
                         <Input
                           id="phone"
                           placeholder="+261 XX XX XX XXX"
@@ -530,11 +529,11 @@ export default function Contact() {
             {[
               {
                 q: "Quel investissement pour commencer ?",
-                a: "Contactez-nous pour un devis personnalisé pour votre exploitation."
+                a: "À partir de 2M Ar pour 10 hectares. ROI garanti 250% en 18 mois ou remboursement."
               },
               {
                 q: "Formation nécessaire ?",
-                a: "Formation complète. Support 24/7 ensuite."
+                a: "Formation complète 5 jours sur site incluse + certification. Support 24/7 ensuite."
               },
               {
                 q: "Fonctionne sans internet ?",
@@ -542,15 +541,15 @@ export default function Contact() {
               },
               {
                 q: "Support en malgache ?",
-                a: "Équipe multilingue français/malgache/anglais/portugais. Support technique 24/7 garanti."
+                a: "Équipe trilingue français/malgache/anglais. Support technique 24/7 garanti."
               },
               {
                 q: "Compatible toutes cultures ?",
-                a: "Oui."
+                a: "Litchi, vanille, girofle optimisés. Café, mangue en développement 2024."
               },
               {
                 q: "Délai pour résultats ?",
-                a: "Premiers résultats visible en 3 mois."
+                a: "Premiers résultats en 3 mois. Revenus doublés garantis en 18 mois maximum."
               }
             ].map((faq, index) => (
               <motion.div

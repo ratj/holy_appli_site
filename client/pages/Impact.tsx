@@ -6,13 +6,15 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { MapPin, TrendingUp, Users, Leaf, Award, Star, Quote, ArrowRight, Target, Globe, DollarSign, CheckCircle, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Impact() {
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   const handleWhatsAppDemo = () => {
-    const whatsappNumber = "+33662110445";
-    const message = "Bonjour ! Je viens de la page Impact de Holy Appli et suis impressionné par vos résultats. Je souhaite rejoindre vos producteurs partenaires. Pouvez-vous me présenter votre programme ?";
+    const whatsappNumber = "+261341234567";
+    const message = t("impact.whatsapp.message");
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank');
@@ -37,61 +39,61 @@ export default function Impact() {
   };
 
   const madagascarStats = [
-    { metric: "500+", label: "Hectares sous surveillance", icon: MapPin, color: "text-green-400", impact: "+40% rendements moyens" },
-    { metric: "50+", label: "Producteurs partenaires", icon: Users, color: "text-blue-400", impact: "Revenus x2.5 en moyenne" },
-    { metric: "35%", label: "Amélioration rendements", icon: TrendingUp, color: "text-emerald-400", impact: "Prix export premium +85%" },
-    { metric: "25%", label: "Réduction pertes post-récolte", icon: Target, color: "text-orange-400", impact: "Économies 150k Ar/ha" }
+    { metric: "500+", label: t("impact.stats.hectares"), icon: MapPin, color: "text-green-400", impact: t("impact.stats.impact1") },
+    { metric: "50+", label: t("impact.stats.farmers"), icon: Users, color: "text-blue-400", impact: t("impact.stats.impact2") },
+    { metric: "35%", label: t("impact.stats.yield"), icon: TrendingUp, color: "text-emerald-400", impact: t("impact.stats.impact3") },
+    { metric: "25%", label: t("impact.stats.losses"), icon: Target, color: "text-orange-400", impact: t("impact.stats.impact4") }
   ];
 
   const economicImpact = [
-    { region: "Région Atsinanana", hectares: 180, producteurs: 25, revenus: "+45%", export: "UE certifié" },
-    { region: "Région SAVA", hectares: 120, producteurs: 15, revenus: "+38%", export: "Premium vanille" },
-    { region: "Région Analamanga", hectares: 90, producteurs: 8, revenus: "+42%", export: "Bio certifié" },
-    { region: "Région Boeny", hectares: 110, producteurs: 12, revenus: "+40%", export: "Export mangue" }
+    { region: t("impact.regions.atsinanana"), hectares: 180, producteurs: 25, revenus: "+45%", export: "UE certifié" },
+    { region: t("impact.regions.sava"), hectares: 120, producteurs: 15, revenus: "+38%", export: "Premium vanille" },
+    { region: t("impact.regions.analamanga"), hectares: 90, producteurs: 8, revenus: "+42%", export: "Bio certifié" },
+    { region: t("impact.regions.boeny"), hectares: 110, producteurs: 12, revenus: "+40%", export: "Export mangue" }
   ];
 
   const testimonials = [
     {
-      name: "Rakoto Andrianina",
-      role: "Producteur de litchi, Tamatave",
+      name: t("impact.testimonial1.name"),
+      role: t("impact.testimonial1.role"),
       avatar: "RA",
-      quote: "Holy Appli a révolutionné ma plantation. Mes revenus ont triplé grâce à l'export Europe. Je vends maintenant 8000 Ar/kg contre 2500 Ar avant !",
+      quote: t("impact.testimonial1.quote"),
       rating: 5,
-      benefits: ["Export Europe certifié", "Prix premium x3", "Revenus 2.8M Ar/mois"],
-      revenue: "+285% revenus"
+      benefits: [t("impact.testimonial1.benefit1"), t("impact.testimonial1.benefit2"), t("impact.testimonial1.benefit3")],
+      revenue: t("impact.testimonial1.revenue")
     },
     {
-      name: "Marie Razafy",
-      role: "Coopérative SAVA Vanilla",
+      name: t("impact.testimonial2.name"),
+      role: t("impact.testimonial2.role"),
       avatar: "MR",
-      quote: "Avec la traçabilité blockchain Holy Appli, notre vanille se vend 120€/kg en Europe contre 45€ avant. Un game-changer total !",
+      quote: t("impact.testimonial2.quote"),
       rating: 5,
-      benefits: ["Blockchain traçabilité", "Contrats sécurisés UE", "Vanille premium +167%"],
-      revenue: "+167% prix vanille"
+      benefits: [t("impact.testimonial2.benefit1"), t("impact.testimonial2.benefit2"), t("impact.testimonial2.benefit3")],
+      revenue: t("impact.testimonial2.revenue")
     },
     {
-      name: "Jean-Pierre Randria",
-      role: "Agronome, Ministère Agriculture",
+      name: t("impact.testimonial3.name"),
+      role: t("impact.testimonial3.role"),
       avatar: "JP",
-      quote: "Holy Appli transforme l'agriculture malgache. Nos exportations bio ont augmenté de 340% en 18 mois. C'est la révolution qu'on attendait !",
+      quote: t("impact.testimonial3.quote"),
       rating: 5,
-      benefits: ["Politique nationale adoptée", "Formation 500+ agents", "Export +340%"],
-      revenue: "Impact national"
+      benefits: [t("impact.testimonial3.benefit1"), t("impact.testimonial3.benefit2"), t("impact.testimonial3.benefit3")],
+      revenue: t("impact.testimonial3.revenue")
     }
   ];
 
   const africaOpportunities = [
-    { country: "Côte d'Ivoire", crop: "Cacao", potential: "2M+ hectares", status: "Pilote lancé", revenue: "+60% prix cacao" },
-    { country: "Kenya", crop: "Café", potential: "600K hectares", status: "Étude en cours", revenue: "Premium café +120%" },
-    { country: "Ghana", crop: "Mangue", potential: "400K hectares", status: "Partenariat signé", revenue: "Export UE +200%" },
-    { country: "Sénégal", crop: "Arachide", potential: "800K hectares", status: "Négociation", revenue: "Bio premium +80%" }
+    { country: t("impact.africa.ivory"), crop: "Cacao", potential: "2M+ hectares", status: t("impact.africa.status.pilot"), revenue: "+60% prix cacao" },
+    { country: t("impact.africa.kenya"), crop: "Café", potential: "600K hectares", status: t("impact.africa.status.study"), revenue: "Premium café +120%" },
+    { country: t("impact.africa.ghana"), crop: "Mangue", potential: "400K hectares", status: t("impact.africa.status.signed"), revenue: "Export UE +200%" },
+    { country: t("impact.africa.senegal"), crop: "Arachide", potential: "800K hectares", status: t("impact.africa.status.negotiation"), revenue: "Bio premium +80%" }
   ];
 
   const sustainabilityMetrics = [
-    { metric: "65%", label: "Réduction pesticides chimiques", progress: 65, impact: "Santé sols +80%" },
-    { metric: "80%", label: "Adoption pratiques bio", progress: 80, impact: "Biodiversité +300%" },
-    { metric: "45%", label: "Économie d'eau irrigation", progress: 45, impact: "Coûts -150k Ar/ha" },
-    { metric: "90%", label: "Satisfaction utilisateurs", progress: 90, impact: "Renouvellement 95%" }
+    { metric: "65%", label: t("impact.sustainability.pesticides"), progress: 65, impact: t("impact.sustainability.impact1") },
+    { metric: "80%", label: t("impact.sustainability.bio"), progress: 80, impact: t("impact.sustainability.impact2") },
+    { metric: "45%", label: t("impact.sustainability.water"), progress: 45, impact: t("impact.sustainability.impact3") },
+    { metric: "90%", label: t("impact.sustainability.satisfaction"), progress: 90, impact: t("impact.sustainability.impact4") }
   ];
 
   return (
@@ -111,18 +113,15 @@ export default function Impact() {
           >
             
             <Badge className="mb-4 bg-gradient-to-r from-green-400 to-emerald-500 text-white text-lg px-6 py-2 border-0">
-              📊 Impact Positif Mesuré
+              {t("impact.hero.badge")}
             </Badge>
             
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-6">
-              <span className="text-green-400">Impact</span> qui <span className="text-cyan-400">Transforme</span> Madagascar
+              {t("impact.hero.title")}
             </h1>
             
             <p className="text-xl text-green-100 mb-8 max-w-4xl mx-auto leading-relaxed">
-              <span className="text-green-400 font-bold">+revenus moyens</span>, 
-              <span className="text-emerald-400 font-bold"> +producteurs enrichis</span>, 
-              <span className="text-cyan-400 font-bold"> normes internationales</span>. 
-              Découvrez les résultats concrets de nos partenaires agriculteurs.
+              {t("impact.hero.subtitle")}
             </p>
           </motion.div>
         </div>
@@ -143,7 +142,7 @@ export default function Impact() {
             </h2>
             <p className="text-lg text-green-200">
               <span className="text-green-400 font-bold">Depuis 2023</span>, Holy Appli génère des 
-              <span className="text-emerald-400 font-bold"> impacts concrets</span> pour nos partenaires
+              <span className="text-emerald-400 font-bold"> impacts financiers concrets</span> pour nos partenaires
             </p>
           </motion.div>
 
@@ -176,7 +175,7 @@ export default function Impact() {
             ))}
           </motion.div>
 
-          {/* Economic Impact by Region 
+          {/* Economic Impact by Region */}
           <motion.div
             className="bg-slate-900/80 backdrop-blur-xl rounded-xl p-8 shadow-lg border border-white/10"
             initial={{ opacity: 0, y: 30 }}
@@ -186,7 +185,7 @@ export default function Impact() {
           >
             <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
               <DollarSign className="mr-3 h-6 w-6 text-green-400" />
-              Impact Économique par Région
+              {t("impact.regions.title")}
             </h3>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -202,30 +201,30 @@ export default function Impact() {
                   <h4 className="font-bold text-green-400 mb-3">{region.region}</h4>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-gray-300">Surface surveillée:</span>
+                      <span className="text-gray-300">{t("impact.regions.surface")}</span>
                       <span className="font-medium text-white">{region.hectares} ha</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-300">Producteurs:</span>
+                      <span className="text-gray-300">{t("impact.regions.producers")}</span>
                       <span className="font-medium text-white">{region.producteurs}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-300">Augmentation revenus:</span>
+                      <span className="text-gray-300">{t("impact.regions.revenue")}</span>
                       <span className="font-bold text-green-400">{region.revenus}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-300">Export:</span>
+                      <span className="text-gray-300">{t("impact.regions.export")}</span>
                       <span className="font-bold text-cyan-400">{region.export}</span>
                     </div>
                   </div>
                 </motion.div>
               ))}
             </div>
-          </motion.div>*/}
+          </motion.div>
         </div>
       </section>
 
-      {/* Testimonials 
+      {/* Testimonials */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
@@ -236,10 +235,10 @@ export default function Impact() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold text-white mb-4">
-              Témoignages de nos <span className="text-green-400">Partenaires </span>
+              {t("impact.testimonials.title")}
             </h2>
             <p className="text-lg text-green-200">
-              Écoutez ceux qui ont <span className="text-green-400 font-bold">multiplié leurs productions</span> avec Holy Appli
+              {t("impact.testimonials.subtitle")}
             </p>
           </motion.div>
 
@@ -298,7 +297,7 @@ export default function Impact() {
             ))}
           </motion.div>
         </div>
-      </section> */}
+      </section>
 
       {/* Sustainability Metrics */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 relative">
@@ -314,11 +313,10 @@ export default function Impact() {
               <Leaf className="h-8 w-8 text-white" />
             </div>
             <h2 className="text-3xl font-bold text-white mb-4">
-              Impact <span className="text-emerald-400">Environnemental</span> Positif
+              {t("impact.sustainability.title")}
             </h2>
             <p className="text-lg text-green-200">
-              Holy Appli favorise <span className="text-emerald-400 font-bold">l'agriculture durable</span> avec 
-              <span className="text-green-400 font-bold"> des résultats mesurables</span>
+              {t("impact.sustainability.subtitle")}
             </p>
           </motion.div>
 
@@ -363,16 +361,13 @@ export default function Impact() {
               <Globe className="h-8 w-8 text-white" />
             </div>
             <h2 className="text-3xl font-bold text-white mb-4">
-              Expansion <span className="text-blue-400">Afrique</span> en Cours
+              {t("impact.africa.title")}
             </h2>
-            {/* Africa Expansion 
             <p className="text-lg text-green-200">
-              <span className="text-blue-400 font-bold">4 pays africains</span> adoptent déjà nos solutions avec 
-              <span className="text-green-400 font-bold"> partenariats gouvernementaux</span>
-            </p>*/}
+              {t("impact.africa.subtitle")}
+            </p>
           </motion.div>
 
-          {/* Africa Opportunities 
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 gap-6"
             variants={staggerContainer}
@@ -391,7 +386,7 @@ export default function Impact() {
                     <div className="flex justify-between items-start">
                       <div>
                         <CardTitle className="text-blue-400">{opportunity.country}</CardTitle>
-                        <CardDescription className="text-gray-300">Culture: {opportunity.crop}</CardDescription>
+                        <CardDescription className="text-gray-300">{t("impact.africa.crop")} {opportunity.crop}</CardDescription>
                       </div>
                       <Badge 
                         className={`${
@@ -408,11 +403,11 @@ export default function Impact() {
                   <CardContent>
                     <div className="space-y-2">
                       <div className="flex justify-between">
-                        <span className="text-gray-300">Potentiel marché:</span>
+                        <span className="text-gray-300">{t("impact.africa.potential")}</span>
                         <span className="font-bold text-blue-400">{opportunity.potential}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-300">Impact revenus:</span>
+                        <span className="text-gray-300">{t("impact.africa.revenue")}</span>
                         <span className="font-bold text-green-400">{opportunity.revenue}</span>
                       </div>
                     </div>
@@ -420,7 +415,7 @@ export default function Impact() {
                 </Card>
               </motion.div>
             ))}
-          </motion.div>*/}
+          </motion.div>
         </div>
       </section>
 
@@ -436,21 +431,19 @@ export default function Impact() {
           >
             <div className="bg-slate-900/80 backdrop-blur-xl rounded-2xl p-8 border border-white/10">
               <h2 className="text-3xl font-bold text-white mb-6">
-                Formation & <span className="text-green-400">Accompagnement</span> Total
+                {t("impact.partnership.title")}
               </h2>
               <p className="text-lg text-green-200 mb-8">
-                <span className="text-green-400 font-bold">100% de nos partenaires</span> atteignent 
-                <span className="text-emerald-400 font-bold"> rapidement la rentabilité </span> grâce à notre 
-                <span className="text-cyan-400 font-bold"> accompagnement personnalisé</span>.
+                {t("impact.partnership.subtitle")}
               </p>
               
               <div className="space-y-4">
                 {[
-                  "Formation personalisée",
-                  "Support 24/7 français/malgache/anglais",
-                  "Mise à jour et nouvelles variétés",
-                  "Assistance certification et bonnes pratiques",
-                  "Réseau de partenaire & contrats sécurisés"
+                  t("impact.partnership.feature1"),
+                  t("impact.partnership.feature2"),
+                  t("impact.partnership.feature3"),
+                  t("impact.partnership.feature4"),
+                  t("impact.partnership.feature5")
                 ].map((feature, index) => (
                   <motion.div
                     key={index}
@@ -476,33 +469,32 @@ export default function Impact() {
             >
               <div className="text-center">
                 <Award className="h-12 w-12 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold mb-4">Programme Partenaire Elite</h3>
+                <h3 className="text-2xl font-bold mb-4">{t("impact.elite.title")}</h3>
                 <p className="text-green-100 mb-6">
-                  Rejoignez nos <span className="font-bold"> producteurs partenaires</span> qui ont 
-                  <span className="font-bold"> multiplié leurs productions</span>
+                  {t("impact.elite.subtitle")}
                 </p>
                 
                 <div className="space-y-3 text-left mb-6">
                   <div className="flex items-center">
                     <CheckCircle className="h-4 w-4 mr-2" />
-                    <span className="text-sm">Augmentation de la production</span>
+                    <span className="text-sm">{t("impact.elite.benefit1")}</span>
                   </div>
                   <div className="flex items-center">
                     <CheckCircle className="h-4 w-4 mr-2" />
-                    <span className="text-sm">Augmentation des revenus</span>
+                    <span className="text-sm">{t("impact.elite.benefit2")}</span>
                   </div>
                   <div className="flex items-center">
                     <CheckCircle className="h-4 w-4 mr-2" />
-                    <span className="text-sm">Impact social</span>
+                    <span className="text-sm">{t("impact.elite.benefit3")}</span>
                   </div>
                   <div className="flex items-center">
                     <CheckCircle className="h-4 w-4 mr-2" />
-                    <span className="text-sm">Formation certification bio offerte</span>
+                    <span className="text-sm">{t("impact.elite.benefit4")}</span>
                   </div>
                 </div>
                 
                 <Button onClick={handlePartnerRedirect} className="bg-white text-green-600 hover:bg-green-50 w-full font-bold">
-                  🚀 Candidater au programme
+                  {t("impact.elite.button")}
                 </Button>
               </div>
             </motion.div>
@@ -520,16 +512,18 @@ export default function Impact() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold text-white mb-6">
-              Rejoignez la <span className="text-green-400">Success Story</span> Holy Appli
+              {t("impact.cta.title")}
             </h2>
-           
+            <p className="text-xl text-green-100 mb-8">
+              {t("impact.cta.subtitle")}
+            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button onClick={handleWhatsAppDemo} size="lg" className="bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4">
                 <MessageCircle className="mr-2 h-5 w-5" />
-                🚀 Devenir partenaire elite
+                {t("impact.cta.button1")}
               </Button>
               <Button onClick={handlePartnerRedirect} size="lg" variant="outline" className="border-green-400 text-green-400 hover:bg-green-500/10 font-bold px-8 py-4">
-                📊 Demander une étude complète
+                {t("impact.cta.button2")}
               </Button>
             </div>
           </motion.div>

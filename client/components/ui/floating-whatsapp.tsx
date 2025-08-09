@@ -2,7 +2,7 @@ import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function FloatingWhatsApp() {
-  const whatsappNumber = "+33662110445"; // Numéro WhatsApp Holy Appli
+  const whatsappNumber = "+261341234567"; // Numéro WhatsApp Holy Appli
   const message = "Bonjour ! Je suis intéressé par Holy Appli et souhaite en savoir plus sur vos solutions agricoles intelligentes.";
   
   const handleWhatsAppClick = () => {

@@ -5,13 +5,15 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Plane, Leaf, TreePine, Smartphone, Satellite, BarChart3, Camera, Map, Wifi, Database, Shield, Clock, ArrowRight, CheckCircle, Play, Brain, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Features() {
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   const handleWhatsAppDemo = () => {
-    const whatsappNumber = "+33662110445";
-    const message = "Bonjour ! Je viens de la page Fonctionnalités de Holy Appli et souhaite une démonstration de vos technologies. Pouvez-vous me montrer vos drones IA et intrants biologiques ?";
+    const whatsappNumber = "+261341234567";
+    const message = t("features.whatsapp.message");
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank');
@@ -34,10 +36,10 @@ export default function Features() {
   const modules = [
     {
       id: "drone",
-      title: "Module Drone Multispectral",
+      title: t("features.module.drone.title"),
       icon: Plane,
       color: "bg-gradient-to-r from-blue-500 to-cyan-500",
-      description: "Surveillance aérienne intelligente avec drones professionnels",
+      description: t("features.module.drone.desc"),
       features: [
         "Compatible DJI Mavic 3 Multispectral",
         "Cartographie orthomosaïque haute résolution",
@@ -53,14 +55,14 @@ export default function Features() {
     },
     {
       id: "phenology",
-      title: "Suivi Phénologique",
+      title: t("features.module.phenology.title"),
       icon: Leaf,
       color: "bg-gradient-to-r from-green-500 to-emerald-500",
-      description: "Automatisation du calendrier de développement des cultures",
+      description: t("features.module.phenology.desc"),
       features: [
         "Reconnaissance automatique des stades BBCH",
         "Modèles IA spécialisés par culture",
-        "Prédictions basées sur données fiables",
+        "Prédictions basées sur données météo",
         "Alertes personnalisées par stade"
       ],
       capabilities: [
@@ -72,15 +74,15 @@ export default function Features() {
     },
     {
       id: "bio",
-      title: "Agriculture Biologique",
+      title: t("features.module.bio.title"),
       icon: TreePine,
       color: "bg-gradient-to-r from-emerald-500 to-green-600",
-      description: "Gestion optimisée des pratiques biologiques et durables",
+      description: t("features.module.bio.desc"),
       features: [
         "Base de données biopesticides certifiés",
-        "Calcul optimisé",
+        "Calculateur de compostage optimisé",
         "Suivi rotation des cultures",
-        "Certification"
+        "Certification bio assistée"
       ],
       capabilities: [
         { name: "Compostage", desc: "ROI +180% vs chimique" },
@@ -94,23 +96,23 @@ export default function Features() {
   const mobileFeatures = [
     {
       icon: Camera,
-      title: "Capture Multimédia",
-      description: "Photos 4K, vidéos HD avec géolocalisation automatique"
+      title: t("features.mobile.capture.title"),
+      description: t("features.mobile.capture.desc")
     },
     {
       icon: Map,
-      title: "Cartographie Terrain",
-      description: "Création de cartes parcellaires temps réel"
+      title: t("features.mobile.mapping.title"),
+      description: t("features.mobile.mapping.desc")
     },
     {
       icon: Wifi,
-      title: "Mode Offline",
-      description: "Fonctionnement sans réseau, sync différée"
+      title: t("features.mobile.offline.title"),
+      description: t("features.mobile.offline.desc")
     },
     {
       icon: Database,
-      title: "OCR Intelligent",
-      description: "Numérisation automatique documents papier"
+      title: t("features.mobile.ocr.title"),
+      description: t("features.mobile.ocr.desc")
     }
   ];
 
@@ -158,17 +160,15 @@ export default function Features() {
           >
             
             <Badge className="mb-4 bg-gradient-to-r from-green-400 to-emerald-500 text-white text-lg px-6 py-2 border-0">
-              🚀 Technologies de Pointe
+              {t("features.hero.badge")}
             </Badge>
             
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-6">
-              <span className="text-green-400">Technologies</span> qui <span className="text-cyan-400">Transforment</span>
+              {t("features.hero.title")}
             </h1>
             
             <p className="text-xl text-green-100 mb-8 max-w-4xl mx-auto leading-relaxed">
-              <span className="text-green-400 font-bold">6 modules révolutionnaires</span> qui génèrent 
-              <span className="text-emerald-400 font-bold"> +250% de ROI</span> pour nos partenaires agriculteurs.
-              Découvrez les technologies qui révolutionnent l'agriculture à Madagascar.
+              {t("features.hero.subtitle")}
             </p>
           </motion.div>
         </div>
@@ -297,12 +297,10 @@ export default function Features() {
               <Smartphone className="h-8 w-8 text-white" />
             </div>
             <h2 className="text-3xl font-bold text-white mb-4">
-              Application Mobile <span className="text-purple-400">Terrain</span>
+              {t("features.mobile.title")}
             </h2>
             <p className="text-lg text-green-200 max-w-3xl mx-auto">
-              <span className="text-purple-400 font-bold">Fonctionnant offline</span>, 
-              <span className="text-cyan-400 font-bold"> synchronisation automatique</span>, 
-              interface optimisée pour le terrain malgache.
+              {t("features.mobile.subtitle")}
             </p>
           </motion.div>
 
@@ -346,12 +344,10 @@ export default function Features() {
               <Satellite className="h-8 w-8 text-white" />
             </div>
             <h2 className="text-3xl font-bold text-white mb-4">
-              Capteurs IoT <span className="text-orange-400">Connectés</span>
+              {t("features.iot.title")}
             </h2>
             <p className="text-lg text-green-200 max-w-3xl mx-auto">
-              <span className="text-orange-400 font-bold">Surveillance 24/7</span> de vos cultures avec 
-              <span className="text-cyan-400 font-bold"> transmission des données à temps réel</span> et 
-              <span className="text-green-400 font-bold"> autonomie 3 mois</span>.
+              {t("features.iot.subtitle")}
             </p>
           </motion.div>
 
@@ -410,22 +406,20 @@ export default function Features() {
               </div>
               
               <h2 className="text-3xl font-bold text-white mb-4">
-                Analytics & <span className="text-indigo-400">Intelligence Artificielle</span>
+                {t("features.analytics.title")}
               </h2>
               
               <p className="text-lg text-green-200 mb-8">
-                <span className="text-indigo-400 font-bold">Prédiction 99.8%</span> de précision pour 
-                <span className="text-green-400 font-bold"> optimiser vos rendements</span> et 
-                <span className="text-cyan-400 font-bold"> maximiser vos profits</span>.
+                {t("features.analytics.subtitle")}
               </p>
               
               <div className="space-y-4">
                 {[
-                  "Estimation automatique charge fructifère (+15% précision)",
-                  "Modélisation prédictive rendements (ROI +250%)",
-                  "Détection précoce maladies (-70% pertes)",
-                  "Optimisation calendriers interventions",
-                  "Rapports personnalisés exportation Europe"
+                  t("features.analytics.feature1"),
+                  t("features.analytics.feature2"),
+                  t("features.analytics.feature3"),
+                  t("features.analytics.feature4"),
+                  t("features.analytics.feature5")
                 ].map((feature, index) => (
                   <motion.div
                     key={index}
@@ -483,16 +477,14 @@ export default function Features() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold text-white mb-6">
-              Prêt à <span className="text-green-400">Multiplier vos Revenus</span> ?
+              {t("features.cta.title")}
             </h2>
             <p className="text-xl text-green-100 mb-8">
-              Rejoignez nos <span className="text-green-400 font-bold">producteurs partenaires</span> qui 
-              <span className="text-emerald-400 font-bold"> produisent</span> en quantité et en qualité tout en  répondant aux 
-              <span className="text-cyan-400 font-bold"> normes internationales</span>.
+              {t("features.cta.subtitle")}
             </p>
             <Button onClick={handleWhatsAppDemo} size="lg" className="bg-green-600 hover:bg-green-700 text-white px-8 py-4">
               <MessageCircle className="mr-2 h-5 w-5" />
-              📞 Planifier une démonstration
+              {t("features.cta.button")}
             </Button>
           </motion.div>
         </div>

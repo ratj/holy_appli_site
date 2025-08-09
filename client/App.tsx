@@ -13,14 +13,13 @@ import NotFound from "./pages/NotFound";
 import PlaceholderPage from "./pages/PlaceholderPage";
 import { FloatingWhatsApp } from "@/components/ui/floating-whatsapp";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { LanguageProvider, useLanguage } from "@/contexts/LanguageContext";
+import { LanguageSelector } from "@/components/LanguageSelector";
 
 function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
-  function handleWhatsAppDemo(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
-    event.preventDefault();
-    window.open("https://wa.me/33662110445?text=Bonjour%20Holy%20Appli%2C%20je%20souhaite%20découvrir%20la%20démonstration%20!", "_blank");
-  }
   return (
     <motion.nav
       className="bg-slate-900/95 backdrop-blur-xl shadow-2xl border-b border-green-400/20 sticky top-0 z-50"
@@ -52,11 +51,11 @@ function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {[
-              { to: "/", label: "Accueil" },
-              { to: "/features", label: "Fonctionnalités" },
-              { to: "/impact", label: "Impact" },
-              { to: "/contact", label: "Contact" },
-              { to: "/about", label: "À propos" }
+              { to: "/", label: t("nav.home") },
+              { to: "/about", label: t("nav.about") },
+              { to: "/features", label: t("nav.features") },
+              { to: "/impact", label: t("nav.impact") },
+              { to: "/contact", label: t("nav.contact") }
             ].map((item, index) => (
               <motion.div
                 key={item.to}
@@ -82,15 +81,21 @@ function Navigation() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button size="sm" className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold border-0 shadow-lg" onClick={handleWhatsAppDemo}>
+              <Button size="sm" className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold border-0 shadow-lg">
                 <MessageCircle className="mr-2 h-4 w-4" />
-                🚀 Demo
+                {t("nav.demo")}
               </Button>
             </motion.div>
           </div>
 
+          {/* Language Selector */}
+          <div className="hidden md:block mr-4">
+            <LanguageSelector />
+          </div>
+
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          <div className="md:hidden flex items-center space-x-2">
+            <LanguageSelector />
             <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-green-100 hover:text-green-400 transition-colors p-2"
@@ -115,11 +120,11 @@ function Navigation() {
         >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-slate-800/50 backdrop-blur-xl rounded-b-2xl border-t border-green-400/20">
             {[
-              { to: "/", label: "Accueil" },
-              { to: "/about", label: "À propos" },
-              { to: "/features", label: "Fonctionnalités" },
-              { to: "/impact", label: "Impact" },
-              { to: "/contact", label: "Contact" }
+              { to: "/", label: t("nav.home") },
+              { to: "/about", label: t("nav.about") },
+              { to: "/features", label: t("nav.features") },
+              { to: "/impact", label: t("nav.impact") },
+              { to: "/contact", label: t("nav.contact") }
             ].map((item, index) => (
               <motion.div
                 key={item.to}
@@ -137,9 +142,9 @@ function Navigation() {
               </motion.div>
             ))}
             <div className="px-3 py-2">
-              <Button size="sm" className="bg-gradient-to-r from-green-500 to-emerald-600 text-white w-full font-bold" onClick={handleWhatsAppDemo} >
+              <Button size="sm" className="bg-gradient-to-r from-green-500 to-emerald-600 text-white w-full font-bold">
                 <MessageCircle className="mr-2 h-4 w-4" />
-                🚀 Démonstration
+                {t("nav.demo")}
               </Button>
             </div>
           </div>
@@ -150,14 +155,8 @@ function Navigation() {
 }
 
 function Footer() {
-  function handleWhatsAppDemo(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
-    event.preventDefault();
-    window.open("https://wa.me/33662110445?text=Bonjour%20Holy%20Appli%2C%20je%20souhaite%20découvrir%20la%20démonstration%20!", "_blank");
-  }
-  function handleWhatsAppPartenaire(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
-    event.preventDefault();
-    window.open("https://wa.me/33662110445?text=Bonjour%20Holy%20Appli%2C%20je%20souhaite%20devenir%20partenaire%20!", "_blank");
-  }
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-slate-900 text-white relative overflow-hidden">
       {/* Animated background */}
@@ -195,24 +194,23 @@ function Footer() {
                 <Leaf className="h-6 w-6 text-white" />
               </motion.div>
               <span className="text-2xl font-black bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
-                HOLY APPLI
+                {t("footer.title")}
               </span>
             </div>
             <p className="text-green-200 mb-6 max-w-md leading-relaxed">
-              Plateforme d'<span className="text-green-400 font-semibold">intelligence artificielle</span> révolutionnaire
-              pour l'<span className="text-emerald-400 font-semibold">agriculture biologique</span> à Madagascar et en Afrique.
+              {t("footer.description")}
             </p>
             <div className="flex space-x-4">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="sm" className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 font-bold" onClick={handleWhatsAppDemo} >
+                <Button size="sm" className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 font-bold">
                   <MessageCircle className="mr-2 h-4 w-4" />
                   🚀 Demo
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="sm" variant="outline" className="border-green-400 text-green-400 hover:bg-green-400/10 font-bold" onClick={handleWhatsAppPartenaire}>
+                <Button size="sm" variant="outline" className="border-green-400 text-green-400 hover:bg-green-400/10 font-bold">
                   <Mail className="mr-2 h-4 w-4" />
-                  Partenaire
+                  {t("nav.partner")}
                 </Button>
               </motion.div>
             </div>
@@ -225,13 +223,13 @@ function Footer() {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-lg font-bold mb-4 text-green-400">Navigation</h3>
+            <h3 className="text-lg font-bold mb-4 text-green-400">{t("footer.nav")}</h3>
             <ul className="space-y-3">
               {[
-                { to: "/", label: "Accueil" },
-                { to: "/about", label: "À propos" },
-                { to: "/features", label: "Fonctionnalités" },
-                { to: "/impact", label: "Impact" }
+                { to: "/", label: t("nav.home") },
+                { to: "/about", label: t("nav.about") },
+                { to: "/features", label: t("nav.features") },
+                { to: "/impact", label: t("nav.impact") }
               ].map((item, index) => (
                 <motion.li
                   key={item.to}
@@ -253,7 +251,7 @@ function Footer() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-lg font-bold mb-4 text-green-400">Contact Bio-Tech</h3>
+            <h3 className="text-lg font-bold mb-4 text-green-400">{t("footer.contact")}</h3>
             <ul className="space-y-3 text-green-200">
               <motion.li whileHover={{ x: 5 }} className="font-medium">
                 🇲🇬 Antananarivo, Madagascar
@@ -272,31 +270,22 @@ function Footer() {
         </div>
 
         <motion.div
-          className="border-t border-green-400/20 mt-12 pt-8 text-center cursor-pointer"
+          className="border-t border-green-400/20 mt-12 pt-8 text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <a
-            href="https://www.ichtus-it.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block"
-            style={{ textDecoration: "none" }}
+          <p className="text-green-200">
+            {t("footer.copyright")}
+          </p>
+          <motion.p
+            className="text-sm text-green-300 mt-2"
+            animate={{ opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 2, repeat: Infinity }}
           >
-            <p className="text-green-200">
-              &copy; 2024 <span className="text-green-400 font-bold">Holy Appli</span> -
-              Révolution Agri-Tech. Tous droits réservés.
-            </p>
-            <motion.p
-              className="text-sm text-green-300 mt-2"
-              animate={{ opacity: [0.5, 1, 0.5] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              🌱 Powered by Ichtus IT 🚀
-            </motion.p>
-          </a>
+            {t("footer.powered")}
+          </motion.p>
         </motion.div>
       </div>
     </footer>
@@ -305,23 +294,25 @@ function Footer() {
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <div className="min-h-screen flex flex-col">
-        <Navigation />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/features" element={<Features />} />
-            <Route path="/impact" element={<Impact />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
-        <Footer />
-        <FloatingWhatsApp />
-      </div>
-    </BrowserRouter>
+    <LanguageProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <div className="min-h-screen flex flex-col">
+          <Navigation />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/features" element={<Features />} />
+              <Route path="/impact" element={<Impact />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+          <Footer />
+          <FloatingWhatsApp />
+        </div>
+      </BrowserRouter>
+    </LanguageProvider>
   );
 }

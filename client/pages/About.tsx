@@ -4,11 +4,14 @@ import { Badge } from "@/components/ui/badge";
 import { Code, Users, Heart, ArrowRight, CheckCircle, MessageCircle, Mail, MapPin, Phone, Globe, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function About() {
+  const { t } = useLanguage();
+
   const handleWhatsAppDemo = () => {
-    const whatsappNumber = "+33662110445";
-    const message = "Bonjour ! Je viens de la page À propos de Holy Appli et suis impressionné par le travail d'Ichtus IT. Je souhaite discuter d'un projet similaire. Pouvez-vous me mettre en contact ?";
+    const whatsappNumber = "+261341234567";
+    const message = t("about.whatsapp.message");
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank');
@@ -16,8 +19,8 @@ export default function About() {
 
   const handleContactIchtus = () => {
     const ichtusEmail = "contact@ichtus-it.com";
-    const subject = "Demande de collaboration - Holy Appli";
-    const body = "Bonjour,\n\nJ'ai découvert Holy Appli et suis impressionné par cette réalisation. Je souhaiterais discuter d'un projet similaire.\n\nCordialement";
+    const subject = t("about.email.subject");
+    const body = t("about.email.body");
     const mailtoUrl = `mailto:${ichtusEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.open(mailtoUrl, '_blank');
   };
@@ -37,55 +40,55 @@ export default function About() {
   };
 
   const techSkills = [
-    { name: "HTML", category: "Frontend", level: "Expert" },
-    { name: "CSS", category: "Frontend", level: "Expert" },
-    { name: "JavaScript", category: "Frontend", level: "Expert" },
-    { name: "React", category: "Frontend", level: "Expert" },
-    { name: "React Native", category: "Mobile", level: "Expert" },
-    { name: "Angular", category: "Frontend", level: "Avancé" },
-    { name: "Vue.js", category: "Frontend", level: "Avancé" },
-    { name: "Node.js", category: "Backend", level: "Expert" },
-    { name: "Nest.js", category: "Backend", level: "Expert" },
-    { name: "PHP", category: "Backend", level: "Avancé" },
-    { name: "WordPress", category: "CMS", level: "Expert" },
-    { name: "Shopify", category: "E-commerce", level: "Avancé" }
+    { name: "HTML", category: "Frontend", level: t("about.tech.level.expert") },
+    { name: "CSS", category: "Frontend", level: t("about.tech.level.expert") },
+    { name: "JavaScript", category: "Frontend", level: t("about.tech.level.expert") },
+    { name: "React", category: "Frontend", level: t("about.tech.level.expert") },
+    { name: "React Native", category: "Mobile", level: t("about.tech.level.expert") },
+    { name: "Angular", category: "Frontend", level: t("about.tech.level.advanced") },
+    { name: "Vue.js", category: "Frontend", level: t("about.tech.level.advanced") },
+    { name: "Node.js", category: "Backend", level: t("about.tech.level.expert") },
+    { name: "Nest.js", category: "Backend", level: t("about.tech.level.expert") },
+    { name: "PHP", category: "Backend", level: t("about.tech.level.advanced") },
+    { name: "WordPress", category: "CMS", level: t("about.tech.level.expert") },
+    { name: "Shopify", category: "E-commerce", level: t("about.tech.level.advanced") }
   ];
 
   const services = [
     {
       icon: Globe,
-      title: "Design & Branding",
-      description: "Identité visuelle complète et branding professionnel",
+      title: t("about.service1.title"),
+      description: t("about.service1.desc"),
       color: "bg-gradient-to-r from-purple-500 to-pink-500"
     },
     {
       icon: Code,
-      title: "Site Web",
-      description: "Applications web performantes et intuitives",
+      title: t("about.service2.title"),
+      description: t("about.service2.desc"),
       color: "bg-gradient-to-r from-blue-500 to-cyan-500"
     },
     {
       icon: Zap,
-      title: "Application Mobile",
-      description: "Apps iOS et Android avec React Native",
+      title: t("about.service3.title"),
+      description: t("about.service3.desc"),
       color: "bg-gradient-to-r from-green-500 to-emerald-500"
     },
     {
       icon: CheckCircle,
-      title: "Application Web",
-      description: "Solutions web complexes et scalables",
+      title: t("about.service4.title"),
+      description: t("about.service4.desc"),
       color: "bg-gradient-to-r from-orange-500 to-red-500"
     },
     {
       icon: Globe,
-      title: "Optimisation SEO",
-      description: "Référencement naturel et performance",
+      title: t("about.service5.title"),
+      description: t("about.service5.desc"),
       color: "bg-gradient-to-r from-indigo-500 to-purple-500"
     },
     {
       icon: Users,
-      title: "UX/UI Design",
-      description: "Expérience utilisateur et interface design",
+      title: t("about.service6.title"),
+      description: t("about.service6.desc"),
       color: "bg-gradient-to-r from-emerald-500 to-green-600"
     }
   ];
@@ -93,20 +96,20 @@ export default function About() {
   const values = [
     {
       icon: Users,
-      title: "Partage",
-      description: "Nous partageons nos connaissances et nos expériences pour faire grandir ensemble l'écosystème technologique.",
+      title: t("about.value1.title"),
+      description: t("about.value1.desc"),
       color: "text-blue-400"
     },
     {
       icon: Heart,
-      title: "Humain",
-      description: "L'humain est au centre de nos préoccupations. Nous créons des solutions qui améliorent la vie des utilisateurs.",
+      title: t("about.value2.title"),
+      description: t("about.value2.desc"),
       color: "text-red-400"
     },
     {
       icon: CheckCircle,
-      title: "Entraide",
-      description: "L'entraide est naturelle chez nous. Nous collaborons pour atteindre l'excellence dans chaque projet.",
+      title: t("about.value3.title"),
+      description: t("about.value3.desc"),
       color: "text-green-400"
     }
   ];
@@ -127,25 +130,16 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             
-            <a
-              href="https://www.ichtus-it.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none" }}
-            >
-              <Badge className="mb-4 bg-gradient-to-r from-green-400 to-emerald-500 text-white text-lg px-6 py-2 border-0 cursor-pointer hover:scale-105 transition-transform">
-                🏢 Développé par Ichtus IT
-              </Badge>
-            </a>
-            
+            <Badge className="mb-4 bg-gradient-to-r from-green-400 to-emerald-500 text-white text-lg px-6 py-2 border-0">
+              {t("about.hero.badge")}
+            </Badge>
+
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-6">
-              À propos de <span className="text-green-400">Holy Appli</span>
+              {t("about.hero.title")}
             </h1>
-            
+
             <p className="text-xl text-green-100 mb-8 max-w-4xl mx-auto leading-relaxed">
-              Holy Appli est une <span className="text-green-400 font-bold">innovation révolutionnaire</span> développée par 
-              <span className="text-emerald-400 font-bold"> Ichtus IT</span>, agence digitale spécialisée dans les 
-              <span className="text-cyan-400 font-bold"> applications web et mobile performantes</span>.
+              {t("about.hero.subtitle")}
             </p>
           </motion.div>
         </div>
@@ -168,42 +162,40 @@ export default function About() {
               </div>
               
               <h2 className="text-3xl font-bold text-white mb-4">
-                <span className="text-blue-400">Ichtus IT</span> - Notre Expertise
+                {t("about.ichtus.title")}
               </h2>
-              
+
               <p className="text-lg text-green-200 mb-6">
-                Agence digitale basée à <span className="text-cyan-400 font-bold">Madagascar et en France</span>, 
-                spécialisée dans le développement d'applications web et mobile 
-                <span className="text-green-400 font-bold"> performantes, ergonomiques et intuitives</span>.
+                {t("about.ichtus.description")}
               </p>
-              
+
               <div className="space-y-4 mb-8">
                 <div className="flex items-center">
                   <CheckCircle className="h-5 w-5 text-green-400 mr-3" />
-                  <span className="text-green-100">+50 projets réalisés avec succès</span>
+                  <span className="text-green-100">{t("about.ichtus.achievement1")}</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="h-5 w-5 text-green-400 mr-3" />
-                  <span className="text-green-100">Équipe de développeurs experts</span>
+                  <span className="text-green-100">{t("about.ichtus.achievement2")}</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="h-5 w-5 text-green-400 mr-3" />
-                  <span className="text-green-100">Solutions sur-mesure innovantes</span>
+                  <span className="text-green-100">{t("about.ichtus.achievement3")}</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="h-5 w-5 text-green-400 mr-3" />
-                  <span className="text-green-100">Accompagnement complet de A à Z</span>
+                  <span className="text-green-100">{t("about.ichtus.achievement4")}</span>
                 </div>
               </div>
-              
+
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button onClick={handleContactIchtus} className="bg-blue-600 hover:bg-blue-700 text-white">
                   <Mail className="mr-2 h-4 w-4" />
-                  Contacter Ichtus IT
+                  {t("about.ichtus.contact.button")}
                 </Button>
                 <Button onClick={handleWhatsAppDemo} variant="outline" className="border-green-400 text-green-400 hover:bg-green-500/10">
                   <MessageCircle className="mr-2 h-4 w-4" />
-                  Discuter projet similaire
+                  {t("about.ichtus.discuss.button")}
                 </Button>
               </div>
             </div>
@@ -213,7 +205,7 @@ export default function About() {
               <div className="bg-slate-900/80 backdrop-blur-xl rounded-xl p-6 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center">
                   <MapPin className="mr-3 h-5 w-5 text-green-400" />
-                  Coordonnées Ichtus IT
+                  {t("about.contact.title")}
                 </h3>
                 <div className="space-y-3 text-green-200">
                   <div className="flex items-center">
@@ -239,12 +231,12 @@ export default function About() {
                 className="bg-gradient-to-br from-green-600 to-emerald-600 p-6 rounded-xl text-white"
                 whileHover={{ scale: 1.02 }}
               >
-                <h3 className="text-xl font-bold mb-4">Prêt à booster votre projet digital ?</h3>
+                <h3 className="text-xl font-bold mb-4">{t("about.contact.cta.title")}</h3>
                 <p className="text-green-100 mb-4">
-                  Ichtus IT développe des solutions sur-mesure adaptées à vos besoins spécifiques.
+                  {t("about.contact.cta.desc")}
                 </p>
                 <Button onClick={handleContactIchtus} className="bg-white text-green-600 hover:bg-green-50 w-full font-bold">
-                  Let's go ! Discutons ensemble
+                  {t("about.contact.cta.button")}
                 </Button>
               </motion.div>
             </div>
@@ -263,11 +255,10 @@ export default function About() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold text-white mb-4">
-              Nos <span className="text-green-400">Valeurs</span> Fondamentales
+              {t("about.values.main.title")}
             </h2>
             <p className="text-lg text-green-200">
-              <span className="text-green-400 font-bold">Partage, Humain et Entraide</span> - 
-              Il n'y a pas besoin de long discours pour décrire ces valeurs que nous retrouvons naturellement au sein de l'agence.
+              {t("about.values.main.desc")}
             </p>
           </motion.div>
 
@@ -310,10 +301,10 @@ export default function About() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold text-white mb-4">
-              Nos <span className="text-cyan-400">Services</span> Experts
+              {t("about.services.main.title")}
             </h2>
             <p className="text-lg text-green-200">
-              De la conception à la mise en production, Ichtus IT vous accompagne sur tous les aspects de votre projet digital
+              {t("about.services.main.desc")}
             </p>
           </motion.div>
 
@@ -360,10 +351,10 @@ export default function About() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold text-white mb-4">
-              Stack <span className="text-purple-400">Technologique</span>
+              {t("about.tech.main.title")}
             </h2>
             <p className="text-lg text-green-200">
-              Nos développeurs maîtrisent les technologies les plus performantes du marché
+              {t("about.tech.main.desc")}
             </p>
           </motion.div>
 
@@ -411,36 +402,35 @@ export default function About() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-              Holy Appli : Notre <span className="text-green-200">Chef-d'œuvre</span> Technologique
+              {t("about.holyappli.title")}
             </h2>
             <p className="text-xl text-green-100 mb-8 max-w-4xl mx-auto">
-              Fruit de <span className="font-bold">18 mois de développement</span>, Holy Appli révolutionne l'agriculture malgache 
-              en combinant <span className="font-bold">IA, drones multispectraux, IoT et blockchain</span> dans une solution révolutionnaire et adaptée aux besoins du marché.
+              {t("about.holyappli.desc")}
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <div className="bg-white/10 rounded-lg p-4">
-                <div className="text-2xl font-bold mb-2">18 mois</div>
-                <div className="text-sm opacity-90">Développement intensif</div>
+                <div className="text-2xl font-bold mb-2">{t("about.holyappli.stat1")}</div>
+                <div className="text-sm opacity-90">{t("about.holyappli.stat1.desc")}</div>
               </div>
               <div className="bg-white/10 rounded-lg p-4">
-                <div className="text-2xl font-bold mb-2">6 modules</div>
-                <div className="text-sm opacity-90">Technologies avancées</div>
+                <div className="text-2xl font-bold mb-2">{t("about.holyappli.stat2")}</div>
+                <div className="text-sm opacity-90">{t("about.holyappli.stat2.desc")}</div>
               </div>
               <div className="bg-white/10 rounded-lg p-4">
-                <div className="text-2xl font-bold mb-2">+250% ROI</div>
-                <div className="text-sm opacity-90">Résultats clients</div>
+                <div className="text-2xl font-bold mb-2">{t("about.holyappli.stat3")}</div>
+                <div className="text-sm opacity-90">{t("about.holyappli.stat3.desc")}</div>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button onClick={handleWhatsAppDemo} size="lg" className="bg-white text-green-600 hover:bg-green-50 font-bold">
                 <MessageCircle className="mr-2 h-5 w-5" />
-                Voir Holy Appli en action
+                {t("about.holyappli.button1")}
               </Button>
-              <Button onClick={handleContactIchtus} size="lg" variant="outline" className="border-white text-green-600 hover:bg-white/10 font-bold">
+              <Button onClick={handleContactIchtus} size="lg" variant="outline" className="border-white text-white hover:bg-white/10 font-bold">
                 <Mail className="mr-2 h-5 w-5" />
-                Projet similaire avec Ichtus IT
+                {t("about.holyappli.button2")}
               </Button>
             </div>
           </motion.div>
@@ -457,22 +447,20 @@ export default function About() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold text-white mb-6">
-              Besoin d'une <span className="text-green-400">Solution Sur-Mesure</span> ?
+              {t("about.final.title")}
             </h2>
             <p className="text-xl text-green-100 mb-8">
-              Comme Holy Appli, <span className="text-green-400 font-bold">Ichtus IT</span> peut développer 
-              <span className="text-emerald-400 font-bold"> votre application révolutionnaire</span>. 
-              Contactez-nous pour discuter de votre projet !
+              {t("about.final.desc")}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button onClick={handleContactIchtus} size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4">
                 <Mail className="mr-2 h-5 w-5" />
-                Contacter Ichtus IT
+                {t("about.final.button1")}
               </Button>
               <Button onClick={handleWhatsAppDemo} size="lg" variant="outline" className="border-green-400 text-green-400 hover:bg-green-500/10 font-bold px-8 py-4">
                 <MessageCircle className="mr-2 h-5 w-5" />
-                Demo Holy Appli
+                {t("about.final.button2")}
               </Button>
             </div>
           </motion.div>
